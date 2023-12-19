@@ -1,0 +1,4 @@
+enum SharedKey {
+  token,
+  language,
+}
