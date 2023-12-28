@@ -18,7 +18,7 @@ class SlidingLogo extends StatelessWidget {
         return SlideTransition(
           position: slidingAnimation,
           child: Image.asset(
-            AssetsData.logo,
+            AssetsData.logoImage,
             width: MediaQuery.of(context).size.width * 0.7,
           ),
         );

@@ -8,21 +8,15 @@ const String kAppVersionCode = '1';
 const String kAppVersionName = '1.0.0';
 const String kAppPackageName = 'com.linegroup.ceramic.online';
 
-/// Main Colors Constants
-const kSuccessColor = Color(0xFF00C851);
-const kErrorColor = Color(0xFFff4444);
-const kWhiteColor = Color(0xFFFFFFFF);
-
 /// App Constants
 const kDefaultLanguage = 'en';
 const kDefaultCountry = 'US';
 const kDefaultLocale = Locale(kDefaultLanguage, kDefaultCountry);
+const kDefaultPadding = 18.0;
+String kAppLanguage = '';
 
 // Animation Constants
 const kDefaultRouteTransition = Transition.fadeIn;
 const kDefaultTransitionTime = Duration(milliseconds: 300);
-const kDefaultAnimationTime = Duration(seconds: 1, milliseconds: 500);
-const kSplashDuration = Duration(seconds: 3);
-
-// Text Constants
-const kDefaultFontFamily = 'Cairo';
+const kDefaultAnimationTime = Duration(seconds: 1, milliseconds: 300);
+const kSplashDuration = Duration(seconds: 2, milliseconds: 500);

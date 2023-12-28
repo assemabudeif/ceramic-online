@@ -25,7 +25,9 @@ if (flutterVersionName == null) {
 android {
     namespace "com.linegroup.ceramic.online.ceramic_online"
     compileSdkVersion flutter.compileSdkVersion
-    ndkVersion flutter.ndkVersion
+    ndkVersion "25.1.8937393"
+
+    // flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

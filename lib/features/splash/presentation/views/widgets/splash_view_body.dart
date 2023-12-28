@@ -1,3 +1,7 @@
+import '/core/services/services_locator.dart';
+import '/core/services/shared_key.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
 import '/core/utilities/routes_manger.dart';
 import '/core/utilities/app_constance.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +28,8 @@ class _SplashViewBodyState extends State<SplashViewBody>
     _initAnimationControllers();
 
     _navigateToNext();
+
+    _initAppPrefs();
   }
 
   @override
@@ -35,8 +41,15 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void _navigateToNext() {
     Future.delayed(kSplashDuration, () {
-      Get.toNamed(Routes.login);
+      Get.offAndToNamed(Routes.loginPath);
     });
+  }
+
+  _initAppPrefs() {
+    kAppLanguage = sl<SharedPreferences>().getString(
+          SharedKey.language.name,
+        ) ??
+        'en';
   }
 
   void _initAnimationControllers() {
