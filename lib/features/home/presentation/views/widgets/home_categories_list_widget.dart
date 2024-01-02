@@ -1,3 +1,8 @@
+import 'package:ceramic_online/core/utilities/dummy.dart';
+import 'package:ceramic_online/core/utilities/routes_manger.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+
 import '/core/global/theme/app_colors_light.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,56 +19,6 @@ class HomeCategoriesListWidget extends StatefulWidget {
 }
 
 class _HomeCategoriesListWidgetState extends State<HomeCategoriesListWidget> {
-  final List<CategoryModel> _categories = [
-    CategoryModel(
-      name: 'Ceramic',
-      image: AssetsData.ceramicCategoryIconSVG,
-    ),
-    CategoryModel(
-      name: 'Tap',
-      image: AssetsData.tapCategoryIconSVG,
-    ),
-    CategoryModel(
-      name: 'Ceramic',
-      image: AssetsData.ceramicCategoryIconSVG,
-    ),
-    CategoryModel(
-      name: 'Tap',
-      image: AssetsData.tapCategoryIconSVG,
-    ),
-    CategoryModel(
-      name: 'Ceramic',
-      image: AssetsData.ceramicCategoryIconSVG,
-    ),
-    CategoryModel(
-      name: 'Tap',
-      image: AssetsData.tapCategoryIconSVG,
-    ),
-    CategoryModel(
-      name: 'Ceramic',
-      image: AssetsData.ceramicCategoryIconSVG,
-    ),
-    CategoryModel(
-      name: 'Tap',
-      image: AssetsData.tapCategoryIconSVG,
-    ),
-    CategoryModel(
-      name: 'Ceramic',
-      image: AssetsData.ceramicCategoryIconSVG,
-    ),
-    CategoryModel(
-      name: 'Tap',
-      image: AssetsData.tapCategoryIconSVG,
-    ),
-    CategoryModel(
-      name: 'Ceramic',
-      image: AssetsData.ceramicCategoryIconSVG,
-    ),
-    CategoryModel(
-      name: 'Tap',
-      image: AssetsData.tapCategoryIconSVG,
-    ),
-  ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -73,40 +28,35 @@ class _HomeCategoriesListWidgetState extends State<HomeCategoriesListWidget> {
           parent: AlwaysScrollableScrollPhysics(),
         ),
         scrollDirection: Axis.horizontal,
-        itemCount: _categories.length,
+        itemCount: kDummyCategories.length,
         itemBuilder: (context, index) {
-          return Column(
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: kTextFieldFillColor,
-                  borderRadius: BorderRadius.circular(10.r),
-                ),
-                width: 60.w,
-                height: 60.h,
-                child: Center(
-                  child: SvgPicture.asset(
-                    _categories[index].image,
+          return InkWell(
+            onTap: () {
+              Get.toNamed(Routes.categoryDataPath);
+            },
+            child: Column(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    color: kTextFieldFillColor,
+                    borderRadius: BorderRadius.circular(10.r),
+                  ),
+                  width: 60.w,
+                  height: 60.h,
+                  child: Center(
+                    child: SvgPicture.asset(
+                      kDummyCategories[index].image,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(height: 3.h),
-              Text(_categories[index].name),
-            ],
+                SizedBox(height: 3.h),
+                Text(kDummyCategories[index].name),
+              ],
+            ),
           );
         },
         separatorBuilder: (context, index) => SizedBox(width: 10.w),
       ),
     );
   }
-}
-
-class CategoryModel {
-  final String name;
-  final String image;
-
-  CategoryModel({
-    required this.name,
-    required this.image,
-  });
 }

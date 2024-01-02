@@ -15,17 +15,21 @@ class HomeSearchWidget extends StatelessWidget {
     this.hasFilter = false,
     this.onTapFilter,
     required this.hintText,
+    this.hasPadding = true,
   });
   final bool hasFilter;
   final Function? onTapFilter;
   final String hintText;
+  final bool hasPadding;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(
-        horizontal: kDefaultPadding.w / 2,
-      ),
+      padding: hasPadding
+          ? EdgeInsets.symmetric(
+              horizontal: kDefaultPadding.w / 2,
+            )
+          : EdgeInsets.zero,
       child: TextFormField(
         decoration: InputDecoration(
           hintText: hintText,

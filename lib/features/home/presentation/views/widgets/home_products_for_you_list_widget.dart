@@ -1,3 +1,6 @@
+import 'package:ceramic_online/core/utilities/dummy.dart';
+import 'package:ceramic_online/core/utilities/routes_manger.dart';
+
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/assets_data.dart';
 import '/core/utilities/font_manger.dart';
@@ -18,17 +21,6 @@ class HomeProductsForYouListWidget extends StatefulWidget {
 
 class _HomeProductsForYouListWidgetState
     extends State<HomeProductsForYouListWidget> {
-  final List<ProductModel> _products = [
-    for (int i = 0; i < 10; i++)
-      ProductModel(
-        name: 'Ceramic Black',
-        image: AssetsData.productCeramicSVG,
-        price: '22.00',
-        description:
-            'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-        quantity: 1,
-      ),
-  ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -38,136 +30,141 @@ class _HomeProductsForYouListWidgetState
           parent: AlwaysScrollableScrollPhysics(),
         ),
         scrollDirection: Axis.horizontal,
-        itemCount: _products.length,
+        itemCount: kDummyProducts.length,
         itemBuilder: (context, index) {
-          return Container(
-            // height: 200.h,
-            width: 0.6.sw,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.r),
-              color: Colors.white,
-            ),
-            padding: EdgeInsets.all(10.r),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SvgPicture.asset(
-                  _products[index].image,
-                  width: 0.6.sw,
-                ),
-                Text(
-                  _products[index].name,
-                  style: context.textTheme.bodyMedium!.copyWith(
-                    fontWeight: FontWeight.bold,
+          return InkWell(
+            onTap: () {
+              Get.toNamed(Routes.productDetailsPath);
+            },
+            child: Container(
+              // height: 200.h,
+              width: 0.6.sw,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10.r),
+                color: Colors.white,
+              ),
+              padding: EdgeInsets.all(10.r),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SvgPicture.asset(
+                    kDummyProducts[index].image,
+                    width: 0.6.sw,
                   ),
-                ),
-                Text(
-                  _products[index].description,
-                  style: context.textTheme.bodySmall!.copyWith(
-                    fontSize: 10.sp,
+                  Text(
+                    kDummyProducts[index].name,
+                    style: context.textTheme.bodyMedium!.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                  maxLines: 3,
-                ),
-                SizedBox(height: 5.h),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      '\$${_products[index].price}',
-                      style: context.textTheme.bodyMedium!.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
+                  Text(
+                    kDummyProducts[index].description,
+                    style: context.textTheme.bodySmall!.copyWith(
+                      fontSize: 10.sp,
                     ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Icon(
-                        Icons.favorite,
-                        color: kPrimaryColor,
-                      ),
-                    ),
-                  ],
-                ),
-                // SizedBox(height: 5.h),
-                Row(
-                  children: [
-                    MaterialButton(
-                      onPressed: () {},
-                      color: kPrimaryColor,
-                      minWidth: 0.09.sw,
-                      height: 0.04.sh,
-                      child: Text(
-                        AppStrings.addToCart.tr,
-                        style: context.textTheme.bodySmall!.copyWith(
-                          color: kWhiteColor,
-                          fontWeight: kFontWeightSemiBold,
+                    maxLines: 3,
+                  ),
+                  SizedBox(height: 5.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '\$${kDummyProducts[index].price}',
+                        style: context.textTheme.bodyMedium!.copyWith(
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ),
-                    SizedBox(width: 10.w),
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InkWell(
-                            onTap: () {
-                              if (_products[index].quantity > 1) {
-                                setState(() {
-                                  _products[index].quantity--;
-                                });
-                              }
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: kPrimaryColor,
-                                borderRadius: BorderRadius.circular(5.r),
-                              ),
-                              width: 0.09.sw,
-                              padding: EdgeInsets.all(5.r),
-                              alignment: Alignment.center,
-                              child: Text(
-                                '-',
-                                style: context.textTheme.bodyMedium!.copyWith(
-                                  color: kWhiteColor,
-                                  fontWeight: kFontWeightBlack,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Text(
-                            '${_products[index].quantity}',
-                            style: context.textTheme.bodyMedium!.copyWith(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          InkWell(
-                            onTap: () {
-                              setState(() {
-                                _products[index].quantity++;
-                              });
-                            },
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: kPrimaryColor,
-                                borderRadius: BorderRadius.circular(5.r),
-                              ),
-                              width: 0.09.sw,
-                              padding: EdgeInsets.all(5.r),
-                              alignment: Alignment.center,
-                              child: Text(
-                                '+',
-                                style: context.textTheme.bodyMedium!.copyWith(
-                                  color: kWhiteColor,
-                                  fontWeight: kFontWeightBlack,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.favorite,
+                          color: kPrimaryColor,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                  // SizedBox(height: 5.h),
+                  Row(
+                    children: [
+                      MaterialButton(
+                        onPressed: () {},
+                        color: kPrimaryColor,
+                        minWidth: 0.09.sw,
+                        height: 0.04.sh,
+                        child: Text(
+                          AppStrings.addToCart.tr,
+                          style: context.textTheme.bodySmall!.copyWith(
+                            color: kWhiteColor,
+                            fontWeight: kFontWeightSemiBold,
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 10.w),
+                      Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            InkWell(
+                              onTap: () {
+                                if (kDummyProducts[index].quantity > 1) {
+                                  setState(() {
+                                    kDummyProducts[index].quantity--;
+                                  });
+                                }
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: kPrimaryColor,
+                                  borderRadius: BorderRadius.circular(5.r),
+                                ),
+                                width: 0.09.sw,
+                                padding: EdgeInsets.all(5.r),
+                                alignment: Alignment.center,
+                                child: Text(
+                                  '-',
+                                  style: context.textTheme.bodyMedium!.copyWith(
+                                    color: kWhiteColor,
+                                    fontWeight: kFontWeightBlack,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Text(
+                              '${kDummyProducts[index].quantity}',
+                              style: context.textTheme.bodyMedium!.copyWith(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                setState(() {
+                                  kDummyProducts[index].quantity++;
+                                });
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: kPrimaryColor,
+                                  borderRadius: BorderRadius.circular(5.r),
+                                ),
+                                width: 0.09.sw,
+                                padding: EdgeInsets.all(5.r),
+                                alignment: Alignment.center,
+                                child: Text(
+                                  '+',
+                                  style: context.textTheme.bodyMedium!.copyWith(
+                                    color: kWhiteColor,
+                                    fontWeight: kFontWeightBlack,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           );
         },
@@ -177,20 +174,4 @@ class _HomeProductsForYouListWidgetState
       ),
     );
   }
-}
-
-class ProductModel {
-  final String name;
-  final String image;
-  final String price;
-  final String description;
-  int quantity;
-
-  ProductModel({
-    required this.name,
-    required this.image,
-    required this.price,
-    required this.description,
-    required this.quantity,
-  });
 }

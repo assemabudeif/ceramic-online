@@ -86,4 +86,20 @@ Map<String, String> get enTranslations => {
       AppStrings.chooseRegion: 'Choose region',
       AppStrings.seeAdsInAllEgypt: 'See Ads in All Egypt',
       AppStrings.allInEgypt: 'All In Egypt',
+
+      // Categories
+      AppStrings.chooseCategories: 'Choose Categories',
+      AppStrings.search: 'Search',
+
+      // Product Details
+      AppStrings.priceOnSelection: 'Price on selection',
+      AppStrings.yourChoiceOfSize: 'Your choice of size: ',
+      AppStrings.required: 'Required',
+      AppStrings.areaCalculation: 'Area Calculation',
+      AppStrings.height: 'Height: ',
+      AppStrings.width: 'Width: ',
+      AppStrings.piecesYouNeed: 'Pieces you need',
+      AppStrings.piece: 'Piece',
+      AppStrings.oftenOrdersWith: 'Often orders with',
+      AppStrings.otherBrands: 'Other Brands',
     };

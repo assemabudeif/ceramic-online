@@ -83,4 +83,20 @@ Map<String, String> get arTranslations => {
       AppStrings.chooseRegion: 'اختر المنطقة',
       AppStrings.seeAdsInAllEgypt: 'عرض الإعلانات في جميع أنحاء مصر',
       AppStrings.allInEgypt: 'الكل في مصر',
+
+      // Categories
+      AppStrings.chooseCategories: 'اختر التصنيفات',
+      AppStrings.search: 'بحث',
+
+      // Product
+      AppStrings.priceOnSelection: 'السعر عند الاختيار',
+      AppStrings.yourChoiceOfSize: 'اختيارك من الحجم: ',
+      AppStrings.required: 'مطلوب',
+      AppStrings.areaCalculation: 'حساب المساحة',
+      AppStrings.height: 'الارتفاع: ',
+      AppStrings.width: 'العرض: ',
+      AppStrings.piecesYouNeed: 'القطع التي تحتاجها',
+      AppStrings.piece: 'قطعة',
+      AppStrings.oftenOrdersWith: 'غالبًا ما يطلب مع',
+      AppStrings.otherBrands: 'علامات تجارية أخرى',
     };

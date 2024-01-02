@@ -1,4 +1,6 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import 'package:ceramic_online/features/widgets/chat_with_suppot_widget.dart';
+import '../../../categories/presentation/views/categories_view.dart';
 import '/core/global/theme/app_colors_light.dart';
 import '/core/global/widgets/custom_app_bar.dart';
 import '/core/utilities/app_constance.dart';
@@ -23,7 +25,7 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
   final int _indexCount = 4;
   final List<Widget> _screens = [
     Container(),
-    Container(),
+    const CategoriesView(),
     const HomeView(),
     Container(),
     Container(),
@@ -75,7 +77,9 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
           ),
         ],
       ),
-      body: _screens[_currentIndex],
+      body: ChatWithSupportWidget(
+        child: _screens[_currentIndex],
+      ),
       floatingActionButton: FloatingActionButton(
         mini: false,
         shape: const CircleBorder(),

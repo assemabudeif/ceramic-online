@@ -1,5 +1,9 @@
 import 'dart:developer';
 
+import 'package:ceramic_online/features/categories/presentation/views/categories_view.dart';
+import 'package:ceramic_online/features/categories/presentation/views/category_data_view.dart';
+import 'package:ceramic_online/features/product_details/presentation/views/product_details_view.dart';
+
 import '/features/location/presentation/views/location_details_view.dart';
 
 import '../../features/auth/presentation/views/auth_sign_phone_number_view.dart';
@@ -32,6 +36,13 @@ class Routes {
   // Location Routes
   static const String locationPath = '/location';
   static const String locationDetailsPath = '/locationDetails';
+
+  // Categories Routes
+  static const String categoriesPath = '/categories';
+  static const String categoryDataPath = '/categoryData';
+
+  // Product Routes
+  static const String productDetailsPath = '/productDetails';
 }
 
 /// App Routes
@@ -82,6 +93,22 @@ List<GetPage<dynamic>> get appRoutes => [
       GetPage(
         name: Routes.locationDetailsPath,
         page: () => const LocationDetailsView(),
+      ),
+
+      // Categories Screens
+      GetPage(
+        name: Routes.categoriesPath,
+        page: () => const CategoriesView(),
+      ),
+      GetPage(
+        name: Routes.categoryDataPath,
+        page: () => const CategoryDataView(),
+      ),
+
+      // Product Details Screens
+      GetPage(
+        name: Routes.productDetailsPath,
+        page: () => const ProductDetailsView(),
       ),
     ];
 

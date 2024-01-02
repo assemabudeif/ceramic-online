@@ -84,4 +84,20 @@ class AppStrings {
   static const String chooseRegion = 'chooseRegion';
   static const String seeAdsInAllEgypt = 'seeAdsInAllEgypt';
   static const String allInEgypt = 'allInEgypt';
+
+  // Categories
+  static const String chooseCategories = 'chooseCategories';
+  static const String search = 'search';
+
+  // Product Details
+  static const String priceOnSelection = 'priceOnSelection';
+  static const String yourChoiceOfSize = 'yourChoiceOfSize';
+  static const String required = 'required';
+  static const String areaCalculation = 'areaCalculation';
+  static const String height = 'height';
+  static const String width = 'width';
+  static const String piecesYouNeed = 'piecesYouNeed';
+  static const String piece = 'piece';
+  static const String oftenOrdersWith = 'oftenOrdersWith';
+  static const String otherBrands = 'otherBrands';
 }
