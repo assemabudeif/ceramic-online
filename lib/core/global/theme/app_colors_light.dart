@@ -16,6 +16,7 @@ const kErrorColor = Color(0xFFff4444);
 const kWhiteColor = Color(0xFFFFFFFF);
 const kBlackColor = Color(0xFF000000);
 const kGoogleButtonColor = Color(0xFF518EF8);
+const kDividerColor = Color(0xFFD5D5D5);
 const kShimmerGradientColor = LinearGradient(
   colors: [
     Color(0xFFE0E0E0),

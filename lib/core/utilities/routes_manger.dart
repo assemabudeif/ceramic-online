@@ -1,8 +1,11 @@
 import 'dart:developer';
 
+import 'package:ceramic_online/features/location/presentation/views/location_details_view.dart';
+
 import '../../features/auth/presentation/views/auth_sign_phone_number_view.dart';
 import '../../features/auth/presentation/views/reset_password_view.dart';
 import '../../features/home/presentation/views/home_layout_view.dart';
+import '../../features/location/presentation/views/location_view.dart';
 import '/features/auth/presentation/views/auth_otp_view.dart';
 
 import '/core/global/language/app_strings.dart';
@@ -25,6 +28,10 @@ class Routes {
   static const String otpPath = '/otp';
   static const String phoneSignPath = '/phoneSign';
   static const String resetPasswordPath = '/resetPassword';
+
+  // Location Routes
+  static const String locationPath = '/location';
+  static const String locationDetailsPath = '/locationDetails';
 }
 
 /// App Routes
@@ -36,10 +43,6 @@ List<GetPage<dynamic>> get appRoutes => [
       ),
 
       // Main Screens
-      // GetPage(
-      //   name: Routes.homePath,
-      //   page: () => const HomeView(),
-      // ),
       GetPage(
         name: Routes.homeLayoutPath,
         page: () => const HomeLayoutView(),
@@ -69,6 +72,16 @@ List<GetPage<dynamic>> get appRoutes => [
       GetPage(
         name: Routes.resetPasswordPath,
         page: () => const ResetPasswordView(),
+      ),
+
+      // Location Screens
+      GetPage(
+        name: Routes.locationPath,
+        page: () => const LocationView(),
+      ),
+      GetPage(
+        name: Routes.locationDetailsPath,
+        page: () => const LocationDetailsView(),
       ),
     ];
 

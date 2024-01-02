@@ -78,4 +78,12 @@ Map<String, String> get enTranslations => {
       AppStrings.bestSales: 'Best Sales',
       AppStrings.addToCart: 'Add To Cart',
 
+      // Location
+      AppStrings.locations: 'Locations',
+      AppStrings.useCurrentLocation: 'Use Current Location',
+      AppStrings.seeAllInEgypt: 'See All In Egypt',
+      AppStrings.recent: 'Recent',
+      AppStrings.chooseRegion: 'Choose region',
+      AppStrings.seeAdsInAllEgypt: 'See Ads in All Egypt',
+      AppStrings.allInEgypt: 'All In Egypt',
     };

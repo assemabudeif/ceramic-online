@@ -57,7 +57,7 @@ class _AuthSignPhoneNumberViewBodyState
             SizedBox(height: 20.h),
             SizedBox(
               height: 220.h,
-              width: 220.w,
+              width: 210.h,
               child: const RiveAnimation.asset(
                 AssetsData.waveAnimation,
                 fit: BoxFit.cover,

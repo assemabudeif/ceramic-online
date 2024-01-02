@@ -1,3 +1,5 @@
+import 'package:flutter/services.dart';
+
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/font_manger.dart';
 import 'package:flutter/material.dart';
@@ -223,6 +225,10 @@ class _AuthOTPNumbersBuilderWidgetState
             focusNode.unfocus();
           }
         },
+        inputFormatters: [
+          FilteringTextInputFormatter.digitsOnly,
+          LengthLimitingTextInputFormatter(1),
+        ],
         validator: (value) {
           if (value!.isEmpty) {
             return '';

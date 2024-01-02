@@ -77,6 +77,7 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
       ),
       body: _screens[_currentIndex],
       floatingActionButton: FloatingActionButton(
+        mini: false,
         shape: const CircleBorder(),
         onPressed: () {
           _changeIndex(2);
@@ -90,7 +91,10 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
               Text(
                 AppStrings.home.tr,
                 style: context.textTheme.bodySmall!.copyWith(
-                    color: kWhiteColor, fontWeight: kFontWeightSemiBold,),
+                  color: kWhiteColor,
+                  fontWeight: kFontWeightSemiBold,
+                  fontSize: 10.sp,
+                ),
               ),
             ],
           ),
@@ -99,6 +103,7 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: AnimatedBottomNavigationBar.builder(
+          height: 0.08.sh,
           activeIndex: _navIndex,
           onTap: (index) {
             if (index < 2) {
@@ -116,14 +121,14 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
               children: [
                 Icon(
                   icons[index],
-                  size: 24.sp,
+                  size: 22.r,
                   color: isActive ? kPrimaryColor : kHintColor,
                 ),
                 const SizedBox(height: 4),
                 Text(
                   titles[index],
                   style: TextStyle(
-                    fontSize: 12.sp,
+                    fontSize: 10.sp,
                     color: isActive ? kPrimaryColor : kHintColor,
                   ),
                 ),

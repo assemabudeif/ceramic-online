@@ -12,6 +12,9 @@ class HomeBestSalesListWidget extends StatelessWidget {
     return SizedBox(
       height: 0.16.sh,
       child: ListView.separated(
+        physics: const BouncingScrollPhysics(
+          parent: AlwaysScrollableScrollPhysics(),
+        ),
         scrollDirection: Axis.horizontal,
         itemCount: 10,
         itemBuilder: (context, index) {

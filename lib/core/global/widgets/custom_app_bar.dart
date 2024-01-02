@@ -1,3 +1,4 @@
+import 'package:ceramic_online/core/utilities/font_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +19,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: Text(title ?? ''),
+      title: Text(
+        title ?? '',
+        style: context.textTheme.titleMedium!.copyWith(
+          color: context.theme.primaryColor,
+          fontWeight: kFontWeightSemiBold,
+        ),
+      ),
+      titleSpacing: 0,
       leading: haveBackIcon
           ? leading ??
               IconButton(

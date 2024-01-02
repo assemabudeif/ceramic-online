@@ -32,8 +32,11 @@ class _HomeProductsForYouListWidgetState
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 0.5.sh,
+      height: 0.55.sh,
       child: ListView.separated(
+        physics: const BouncingScrollPhysics(
+          parent: AlwaysScrollableScrollPhysics(),
+        ),
         scrollDirection: Axis.horizontal,
         itemCount: _products.length,
         itemBuilder: (context, index) {

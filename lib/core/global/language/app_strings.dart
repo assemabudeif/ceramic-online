@@ -75,4 +75,13 @@ class AppStrings {
   static const String productsForYou = 'productsForYou';
   static const String bestSales = 'bestSales';
   static const String addToCart = 'addToCart';
+
+  // Location
+  static const String locations = 'locations';
+  static const String useCurrentLocation = 'useCurrentLocation';
+  static const String seeAllInEgypt = 'seeAllInEgypt';
+  static const String recent = 'recent';
+  static const String chooseRegion = 'chooseRegion';
+  static const String seeAdsInAllEgypt = 'seeAdsInAllEgypt';
+  static const String allInEgypt = 'allInEgypt';
 }

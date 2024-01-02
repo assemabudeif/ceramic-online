@@ -21,6 +21,9 @@ class HomeView extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(
+          parent: AlwaysScrollableScrollPhysics(),
+        ),
         padding: EdgeInsets.symmetric(
           horizontal: kDefaultPadding.w,
         ),
@@ -36,7 +39,11 @@ class HomeView extends StatelessWidget {
               //
               //* Search
               //
-              const HomeSearchWidget(),
+              HomeSearchWidget(
+                hintText: AppStrings.whatAreYouLookingFor.tr,
+                hasFilter: true,
+                onTapFilter: () {},
+              ),
               SizedBox(height: 10.h),
 
               //

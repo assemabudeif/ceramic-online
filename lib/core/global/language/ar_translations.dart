@@ -74,4 +74,13 @@ Map<String, String> get arTranslations => {
       AppStrings.productsForYou: 'المنتجات لك',
       AppStrings.bestSales: 'أفضل المبيعات',
       AppStrings.addToCart: 'أضف إلى السلة',
+
+      // Location
+      AppStrings.locations: 'المواقع',
+      AppStrings.useCurrentLocation: 'استخدم الموقع الحالي',
+      AppStrings.seeAllInEgypt: 'عرض الكل في مصر',
+      AppStrings.recent: 'الأخيرة',
+      AppStrings.chooseRegion: 'اختر المنطقة',
+      AppStrings.seeAdsInAllEgypt: 'عرض الإعلانات في جميع أنحاء مصر',
+      AppStrings.allInEgypt: 'الكل في مصر',
     };

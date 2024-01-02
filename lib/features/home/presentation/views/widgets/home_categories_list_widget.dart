@@ -69,6 +69,9 @@ class _HomeCategoriesListWidgetState extends State<HomeCategoriesListWidget> {
     return SizedBox(
       height: 100.h,
       child: ListView.separated(
+        physics: const BouncingScrollPhysics(
+          parent: AlwaysScrollableScrollPhysics(),
+        ),
         scrollDirection: Axis.horizontal,
         itemCount: _categories.length,
         itemBuilder: (context, index) {
