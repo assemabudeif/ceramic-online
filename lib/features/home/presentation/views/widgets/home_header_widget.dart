@@ -1,11 +1,11 @@
-import 'package:ceramic_online/core/utilities/routes_manger.dart';
+import '/core/utilities/routes_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../../../../core/global/theme/app_colors_light.dart';
-import '../../../../../core/utilities/assets_data.dart';
+import '/core/global/theme/app_colors_light.dart';
+import '/core/utilities/assets_data.dart';
 
 class HomeHeaderWidget extends StatelessWidget {
   const HomeHeaderWidget({super.key});

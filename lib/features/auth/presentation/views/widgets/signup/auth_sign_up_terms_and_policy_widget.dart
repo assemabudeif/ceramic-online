@@ -4,10 +4,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../../../core/global/language/app_strings.dart';
-import '../../../../../../core/global/language/language_manger.dart';
-import '../../../../../../core/global/theme/app_colors_light.dart';
-import '../../../../../../core/utilities/font_manger.dart';
+import '/../core/global/language/app_strings.dart';
+import '/../core/global/language/language_manger.dart';
+import '/../core/global/theme/app_colors_light.dart';
+import '/../core/utilities/font_manger.dart';
 
 class AuthSignUpTermsAndPolicyWidget extends StatelessWidget {
   const AuthSignUpTermsAndPolicyWidget({

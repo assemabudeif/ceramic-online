@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utilities/assets_data.dart';
+import '/core/utilities/assets_data.dart';
 
 class SlidingLogo extends StatelessWidget {
   const SlidingLogo({

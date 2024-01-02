@@ -9,7 +9,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:rive/rive.dart';
 
-import '../../../../../../core/utilities/routes_manger.dart';
+import '/../core/utilities/routes_manger.dart';
 
 class AuthSignPhoneNumberViewBody extends StatefulWidget {
   const AuthSignPhoneNumberViewBody(

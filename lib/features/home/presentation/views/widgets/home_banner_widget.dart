@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../../core/utilities/assets_data.dart';
+import '/core/utilities/assets_data.dart';
 
 class HomeBannerWidget extends StatelessWidget {
   const HomeBannerWidget({super.key});

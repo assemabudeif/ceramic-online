@@ -7,7 +7,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
-import '../../../../../core/utilities/assets_data.dart';
+import '/core/utilities/assets_data.dart';
 
 class HomeSearchWidget extends StatelessWidget {
   const HomeSearchWidget({

@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:ceramic_online/features/location/presentation/views/location_details_view.dart';
+import '/features/location/presentation/views/location_details_view.dart';
 
 import '../../features/auth/presentation/views/auth_sign_phone_number_view.dart';
 import '../../features/auth/presentation/views/reset_password_view.dart';
