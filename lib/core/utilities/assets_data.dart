@@ -21,4 +21,15 @@ class AssetsData {
   static const String waveLoopAnimation = '${_baseAnimationsPath}wave_loop.riv';
   static const String passwordLoopAnimation =
       '${_baseAnimationsPath}password_loop.riv';
+  static const String cartIconSVG = '${_baseSVGsPath}cart_icon.svg';
+  static const String bannerSVG = '${_baseSVGsPath}banner.svg';
+  static const String ceramicCategoryIconSVG =
+      '${_baseSVGsPath}ceramic_category_icon.svg';
+  static const String tapCategoryIconSVG =
+      '${_baseSVGsPath}tap_category_icon.svg';
+  static const String productCeramicSVG = '${_baseSVGsPath}product.svg';
+  static const String supportIconSVG = '${_baseSVGsPath}support_icon.svg';
+  static const String searchIconSVG = '${_baseSVGsPath}search.svg';
+  static const String locationIconSVG = '${_baseSVGsPath}location.svg';
+  static const String notificationIconSVG = '${_baseSVGsPath}notification.svg';
 }

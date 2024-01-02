@@ -9,6 +9,7 @@ Color kDefaultBackground =
     appThemeModeIsDark ? const Color(0xFF121212) : const Color(0xFFF2F2F2);
 Color kDefaultIconColor =
     appThemeModeIsDark ? kWhiteColor : const Color(0xFF707070);
+const kDarkIconColor = Color(0xFF484848);
 const Color kTextFieldFillColor = Color(0xFFD7D7E4);
 const kSuccessColor = Color(0xFF00C851);
 const kErrorColor = Color(0xFFff4444);

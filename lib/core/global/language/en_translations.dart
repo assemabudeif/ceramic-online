@@ -63,4 +63,19 @@ Map<String, String> get enTranslations => {
       AppStrings.successfulPasswordReset: 'Successful password reset!',
       AppStrings.youCanNowUseYourNewPasswordToLogInToYourAccount:
           'You can now use your new password to log in to your account!s',
+
+      // Home
+      AppStrings.home: 'Home',
+      AppStrings.favorites: 'Favorites',
+      AppStrings.categories: 'Categories',
+      AppStrings.orders: 'Orders',
+      AppStrings.profile: 'Profile',
+      AppStrings.whatAreYouLookingFor: 'What are you looking for?',
+      AppStrings.filter: 'Filter',
+      AppStrings.exploreCategories: 'Explore Categories',
+      AppStrings.seeAll: 'See All',
+      AppStrings.productsForYou: 'Products For You',
+      AppStrings.bestSales: 'Best Sales',
+      AppStrings.addToCart: 'Add To Cart',
+
     };

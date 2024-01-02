@@ -60,4 +60,18 @@ Map<String, String> get arTranslations => {
       AppStrings.successfulPasswordReset: 'تمت إعادة تعيين كلمة المرور بنجاح!',
       AppStrings.youCanNowUseYourNewPasswordToLogInToYourAccount:
           'يمكنك الآن استخدام كلمة المرور الجديدة لتسجيل الدخول إلى حسابك',
+
+      // Home
+      AppStrings.home: 'الرئيسية',
+      AppStrings.favorites: 'المفضلة',
+      AppStrings.categories: 'التصنيفات',
+      AppStrings.orders: 'الطلبات',
+      AppStrings.profile: 'الملف الشخصي',
+      AppStrings.whatAreYouLookingFor: 'ماذا تبحث عن؟',
+      AppStrings.filter: 'تصفية',
+      AppStrings.exploreCategories: 'استكشف التصنيفات',
+      AppStrings.seeAll: 'عرض الكل',
+      AppStrings.productsForYou: 'المنتجات لك',
+      AppStrings.bestSales: 'أفضل المبيعات',
+      AppStrings.addToCart: 'أضف إلى السلة',
     };

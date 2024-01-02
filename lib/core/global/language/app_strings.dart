@@ -61,4 +61,18 @@ class AppStrings {
   static const String successfulPasswordReset = 'successfulPasswordReset';
   static const String youCanNowUseYourNewPasswordToLogInToYourAccount =
       'youCanNowUseYourNewPasswordToLogInToYourAccount';
+
+  // Home Screen
+  static const String home = 'home';
+  static const String favorites = 'favorites';
+  static const String categories = 'categories';
+  static const String orders = 'orders';
+  static const String profile = 'profile';
+  static const String whatAreYouLookingFor = 'whatAreYouLookingFor';
+  static const String filter = 'filter';
+  static const String exploreCategories = 'exploreCategories';
+  static const String seeAll = 'seeAll';
+  static const String productsForYou = 'productsForYou';
+  static const String bestSales = 'bestSales';
+  static const String addToCart = 'addToCart';
 }
