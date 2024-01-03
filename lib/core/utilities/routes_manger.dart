@@ -1,8 +1,8 @@
 import 'dart:developer';
 
-import 'package:ceramic_online/features/categories/presentation/views/categories_view.dart';
-import 'package:ceramic_online/features/categories/presentation/views/category_data_view.dart';
-import 'package:ceramic_online/features/product_details/presentation/views/product_details_view.dart';
+import '/features/categories/presentation/views/categories_view.dart';
+import '/features/categories/presentation/views/category_data_view.dart';
+import '/features/product_details/presentation/views/product_details_view.dart';
 
 import '/features/location/presentation/views/location_details_view.dart';
 

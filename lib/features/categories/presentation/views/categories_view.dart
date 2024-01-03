@@ -1,9 +1,9 @@
-import 'package:ceramic_online/core/global/language/app_strings.dart';
-import 'package:ceramic_online/core/global/theme/app_colors_light.dart';
-import 'package:ceramic_online/core/utilities/app_constance.dart';
-import 'package:ceramic_online/core/utilities/dummy.dart';
-import 'package:ceramic_online/core/utilities/routes_manger.dart';
-import 'package:ceramic_online/features/home/presentation/views/widgets/home_search_widget.dart';
+import '/core/global/language/app_strings.dart';
+import '/core/global/theme/app_colors_light.dart';
+import '/core/utilities/app_constance.dart';
+import '/core/utilities/dummy.dart';
+import '/core/utilities/routes_manger.dart';
+import '/features/home/presentation/views/widgets/home_search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';

@@ -1,7 +1,7 @@
-import 'package:ceramic_online/core/global/theme/app_colors_light.dart';
-import 'package:ceramic_online/core/global/widgets/custom_app_bar.dart';
-import 'package:ceramic_online/core/utilities/app_constance.dart';
-import 'package:ceramic_online/core/utilities/assets_data.dart';
+import '/core/global/theme/app_colors_light.dart';
+import '/core/global/widgets/custom_app_bar.dart';
+import '/core/utilities/app_constance.dart';
+import '/core/utilities/assets_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';

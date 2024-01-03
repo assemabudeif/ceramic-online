@@ -1,4 +1,4 @@
-import 'package:ceramic_online/core/global/widgets/custom_app_bar.dart';
+import '/core/global/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/category_data_view_body.dart';

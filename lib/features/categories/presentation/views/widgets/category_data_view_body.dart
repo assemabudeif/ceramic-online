@@ -1,8 +1,8 @@
-import 'package:ceramic_online/core/global/theme/app_colors_light.dart';
-import 'package:ceramic_online/core/utilities/app_constance.dart';
-import 'package:ceramic_online/core/utilities/dummy.dart';
-import 'package:ceramic_online/core/utilities/font_manger.dart';
-import 'package:ceramic_online/core/utilities/routes_manger.dart';
+import '/core/global/theme/app_colors_light.dart';
+import '/core/utilities/app_constance.dart';
+import '/core/utilities/dummy.dart';
+import '/core/utilities/font_manger.dart';
+import '/core/utilities/routes_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';

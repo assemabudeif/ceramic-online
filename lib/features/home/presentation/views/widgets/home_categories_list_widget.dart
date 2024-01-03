@@ -1,15 +1,11 @@
-import 'package:ceramic_online/core/utilities/dummy.dart';
-import 'package:ceramic_online/core/utilities/routes_manger.dart';
+import '/core/utilities/dummy.dart';
+import '/core/utilities/routes_manger.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '/core/global/theme/app_colors_light.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-
-import '/core/utilities/assets_data.dart';
-
 class HomeCategoriesListWidget extends StatefulWidget {
   const HomeCategoriesListWidget({super.key});
 
