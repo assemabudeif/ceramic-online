@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:ceramic_online/features/chat_with_support/presentation/view/chat_with_support_view.dart';
+import '/features/chat_with_support/presentation/view/chat_with_support_view.dart';
 
 import '/features/categories/presentation/views/categories_view.dart';
 import '/features/categories/presentation/views/category_data_view.dart';

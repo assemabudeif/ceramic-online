@@ -1,4 +1,6 @@
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import '/features/order/presentation/views/orders_view.dart';
+import '/features/profile/presentation/views/profile_view.dart';
 import '/features/favorites/presentation/views/favorite_view.dart';
 import '../../../widgets/chat_with_support_widget.dart';
 import '../../../categories/presentation/views/categories_view.dart';
@@ -28,8 +30,8 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
     const FavoriteView(),
     const CategoriesView(),
     const HomeView(),
-    Container(),
-    Container(),
+    const OrdersView(),
+    const ProfileView(),
   ];
 
   int _currentIndex = 2;

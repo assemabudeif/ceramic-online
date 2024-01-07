@@ -1,4 +1,4 @@
-import 'package:ceramic_online/core/utilities/routes_manger.dart';
+import '/core/utilities/routes_manger.dart';
 import 'package:get/get.dart';
 
 import '/core/global/theme/app_colors_light.dart';
