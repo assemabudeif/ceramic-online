@@ -13,11 +13,13 @@ const kLightBackgroundColor = Color(0xFFF2F2F2);
 const kDarkIconColor = Color(0xFF484848);
 const Color kTextFieldFillColor = Color(0xFFD7D7E4);
 const kSuccessColor = Color(0xFF00C851);
+const kOnlineColor = Color(0xFF3C9701);
 const kErrorColor = Color(0xFFff4444);
 const kWhiteColor = Color(0xFFFFFFFF);
 const kBlackColor = Color(0xFF000000);
 const kGoogleButtonColor = Color(0xFF518EF8);
 const kDividerColor = Color(0xFFD5D5D5);
+const kTransparentColor = Colors.transparent;
 const kShimmerGradientColor = LinearGradient(
   colors: [
     Color(0xFFE0E0E0),

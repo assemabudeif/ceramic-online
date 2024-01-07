@@ -14,13 +14,6 @@ class AssetsData {
   static const String googleSvg = '${_baseSVGsPath}google.svg';
   static const String mainLogoSvg = '${_baseSVGsPath}main_logo.svg';
   static const String phoneOtpSvg = '${_baseSVGsPath}phone_otp.svg';
-
-  /// Animations
-  static const String _baseAnimationsPath = 'assets/animation/';
-  static const String waveAnimation = '${_baseAnimationsPath}wave.riv';
-  static const String waveLoopAnimation = '${_baseAnimationsPath}wave_loop.riv';
-  static const String passwordLoopAnimation =
-      '${_baseAnimationsPath}password_loop.riv';
   static const String cartIconSVG = '${_baseSVGsPath}cart_icon.svg';
   static const String bannerSVG = '${_baseSVGsPath}banner.svg';
   static const String ceramicCategoryIconSVG =
@@ -28,8 +21,20 @@ class AssetsData {
   static const String tapCategoryIconSVG =
       '${_baseSVGsPath}tap_category_icon.svg';
   static const String productCeramicSVG = '${_baseSVGsPath}product.svg';
+  static const String product2CeramicSVG = '${_baseSVGsPath}product2.svg';
   static const String supportIconSVG = '${_baseSVGsPath}support_icon.svg';
   static const String searchIconSVG = '${_baseSVGsPath}search.svg';
   static const String locationIconSVG = '${_baseSVGsPath}location.svg';
   static const String notificationIconSVG = '${_baseSVGsPath}notification.svg';
+  static const String favoriteIconSVG = '${_baseSVGsPath}favorite.svg';
+  static const String disFavoriteIconSVG = '${_baseSVGsPath}dis_favorite.svg';
+
+  /// Animations
+  static const String _baseAnimationsPath = 'assets/animation/';
+  static const String waveAnimation = '${_baseAnimationsPath}wave.riv';
+  static const String waveLoopAnimation = '${_baseAnimationsPath}wave_loop.riv';
+  static const String favouriteAnimation =
+      '${_baseAnimationsPath}favourite_animation.riv';
+  static const String passwordLoopAnimation =
+      '${_baseAnimationsPath}password_loop.riv';
 }

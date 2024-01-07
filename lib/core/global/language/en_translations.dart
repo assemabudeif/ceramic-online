@@ -102,4 +102,18 @@ Map<String, String> get enTranslations => {
       AppStrings.piece: 'Piece',
       AppStrings.oftenOrdersWith: 'Often orders with',
       AppStrings.otherBrands: 'Other Brands',
+
+      // Favorite Screen
+      AppStrings.addToFavorites: 'Add to favorites',
+      AppStrings.saveYourFavoritesPlaces:
+          'Save Your Favorites places and enjoy customized recommendations, just for you',
+      AppStrings.swipeRightToAddThisBrand:
+          'Swipe right to add this Brand to your Favorites. To dismiss it, swipe left.',
+      AppStrings.yourFavorites: 'Your Favorites',
+
+      // Support Chat Screen
+      AppStrings.support: 'Support',
+      AppStrings.online: 'Online',
+      AppStrings.offline: 'Offline',
+      AppStrings.enterTextHere: 'Enter text here',
     };

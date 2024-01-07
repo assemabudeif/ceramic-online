@@ -23,7 +23,7 @@ class _HomeProductsForYouListWidgetState
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 0.55.sh,
+      height: 0.45.sh,
       child: ListView.separated(
         physics: const BouncingScrollPhysics(
           parent: AlwaysScrollableScrollPhysics(),
@@ -46,9 +46,11 @@ class _HomeProductsForYouListWidgetState
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SvgPicture.asset(
-                    kDummyProducts[index].image,
-                    width: 0.6.sw,
+                  Expanded(
+                    child: SvgPicture.asset(
+                      kDummyProducts[index].image,
+                      width: 0.6.sw,
+                    ),
                   ),
                   Text(
                     kDummyProducts[index].name,

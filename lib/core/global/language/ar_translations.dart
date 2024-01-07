@@ -99,4 +99,18 @@ Map<String, String> get arTranslations => {
       AppStrings.piece: 'قطعة',
       AppStrings.oftenOrdersWith: 'غالبًا ما يطلب مع',
       AppStrings.otherBrands: 'علامات تجارية أخرى',
+
+      // Favorite Screen
+      AppStrings.addToFavorites: 'أضف إلى المفضلة',
+      AppStrings.saveYourFavoritesPlaces:
+          'احفظ أماكنك المفضلة واعثر عليها بسهولة في أي وقت.',
+      AppStrings.swipeRightToAddThisBrand:
+          'اسحب إلى اليمين لإضافة هذه العلامة التجارية إلى المفضلة الخاصة بك, واسحب إلى اليسار لتجاهلها.',
+      AppStrings.yourFavorites: 'المفضلة',
+
+      // Support Chat Screen
+      AppStrings.support: 'الدعم',
+      AppStrings.online: 'متصل',
+      AppStrings.offline: 'غير متصل',
+      AppStrings.enterTextHere: 'أدخل النص هنا',
     };

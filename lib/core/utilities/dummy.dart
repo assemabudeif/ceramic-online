@@ -41,7 +41,7 @@ final List<ProductModel> kDummyProducts = [
   for (int i = 0; i < 10; i++)
     ProductModel(
       name: 'Ceramic Black',
-      image: AssetsData.productCeramicSVG,
+      image: AssetsData.product2CeramicSVG,
       price: '22.00',
       description:
           'Lorem Ipsum is simply dummy text of the printing and typesetting industry',

@@ -100,4 +100,16 @@ class AppStrings {
   static const String piece = 'piece';
   static const String oftenOrdersWith = 'oftenOrdersWith';
   static const String otherBrands = 'otherBrands';
+
+  // Favourite Screen
+  static const String addToFavorites = 'addToFavorites';
+  static const String saveYourFavoritesPlaces = 'saveYourFavoritesPlaces';
+  static const String swipeRightToAddThisBrand = 'swipeRightToAddThisBrand';
+  static const String yourFavorites = 'yourFavorites';
+
+  // Support Chat Screen
+  static const String support = 'support';
+  static const String online = 'online';
+  static const String offline = 'offline';
+  static const String enterTextHere = 'enterTextHere';
 }

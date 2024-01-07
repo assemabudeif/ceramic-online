@@ -1,3 +1,6 @@
+import 'package:ceramic_online/core/utilities/routes_manger.dart';
+import 'package:get/get.dart';
+
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/assets_data.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +20,9 @@ class ChatWithSupportWidget extends StatelessWidget {
           bottom: 10.h,
           end: 0,
           child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Get.toNamed(Routes.chatWithSupportPath);
+            },
             child: Container(
               decoration: BoxDecoration(
                 color: kPrimaryColor,
