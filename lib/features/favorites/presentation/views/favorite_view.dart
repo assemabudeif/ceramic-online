@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:animate_do/animate_do.dart';
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
@@ -19,40 +21,16 @@ class FavoriteView extends StatefulWidget {
   State<FavoriteView> createState() => _FavoriteViewState();
 }
 
-class _FavoriteViewState extends State<FavoriteView> {
-  List<ProductModel> products = [];
-  double heartIconSize = 30.r;
-  double favoriteIconSize = 30.r;
-
-  _changeHeartIconSizeWithAnimation() {
-// add zoom animation  to heart icon
-
-    setState(() {
-      heartIconSize = 80.r;
-    });
-    Future.delayed(const Duration(milliseconds: 400), () {
-      setState(() {
-        heartIconSize = 30.r;
-      });
-    });
-  }
-
-  _changeFavoriteIconSizeWithAnimation() {
-    setState(() {
-      favoriteIconSize = 80.r;
-    });
-    Future.delayed(const Duration(milliseconds: 200), () {
-      setState(() {
-        favoriteIconSize = 30.r;
-      });
-    });
-  }
-
+class _FavoriteViewState extends State<FavoriteView>
+    with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       padding: EdgeInsets.symmetric(
         horizontal: kDefaultPadding.w,
+      ),
+      physics: const BouncingScrollPhysics(
+        parent: AlwaysScrollableScrollPhysics(),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -63,144 +41,161 @@ class _FavoriteViewState extends State<FavoriteView> {
             style: context.theme.textTheme.titleLarge,
           ),
           SizedBox(height: 10.h),
-          if (kDummyProducts.isNotEmpty)
-            Column(
-              children: [
-                Align(
-                  alignment: AlignmentDirectional.centerStart,
-                  child: Text(
-                    AppStrings.addToFavorites.tr,
-                    style: context.theme.textTheme.titleMedium!.copyWith(
-                      color: kPrimaryColor,
-                    ),
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: Text(
-                        AppStrings.saveYourFavoritesPlaces.tr,
-                        style: context.theme.textTheme.bodyMedium!.copyWith(
-                          color: kTextDarkColor,
-                        ),
-                        maxLines: 3,
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsetsDirectional.only(bottom: 20.h),
-                      child: SvgPicture.asset(AssetsData.favoriteIconSVG),
-                    ),
-                  ],
-                ),
-                SizedBox(height: 20.h),
-                Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: kDefaultPadding.w / 2),
-                  child: Stack(
-                    children: [
-                      for (int i = 0; i < kDummyProducts.length; i++)
-                        Transform.rotate(
-                          angle: i == kDummyProducts.length - 1
-                              ? 0
-                              : i % 2 == 0
-                                  ? 0.3
-                                  : -0.1,
-                          child: DismissibleTile(
-                            onDismissed: (direction) {
-                              if (direction ==
-                                  DismissibleTileDirection.leftToRight) {
-                                setState(() {
-                                  products.add(kDummyProducts[i]);
-                                  _changeFavoriteIconSizeWithAnimation();
-                                });
-                              } else {
-                                setState(() {
-                                  _changeHeartIconSizeWithAnimation();
-                                });
-                              }
-                            },
-                            ltrDismissedColor: kTransparentColor,
-                            rtlDismissedColor: kTransparentColor,
-                            rtlBackground: Container(
-                              padding: EdgeInsetsDirectional.only(
-                                end: kDefaultPadding.w,
-                              ),
-                              alignment: AlignmentDirectional.center,
-                              color: kTransparentColor,
-                              child: Icon(
-                                Icons.heart_broken,
-                                color: kHintColor,
-                                size: 100.r,
-                              ),
-                            ),
-                            ltrBackground: Container(
-                              padding: EdgeInsetsDirectional.only(
-                                start: kDefaultPadding.w,
-                              ),
-                              alignment: AlignmentDirectional.center,
-                              color: kTransparentColor,
-                              child: Icon(
-                                Icons.favorite,
-                                color: kPrimaryColor,
-                                size: 100.r,
-                              ),
-                            ),
-                            key: UniqueKey(),
-                            child: SingleProductItemWidget(
-                              index: i,
-                            ),
-                          ),
-                        ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 50.h),
-                Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: kDefaultPadding.w,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      ZoomIn(
-                        animate: true,
-                        child: Icon(
-                          Icons.heart_broken,
-                          color: kHintColor,
-                          size: heartIconSize,
-                        ),
-                      ),
-                      Icon(
-                        Icons.favorite,
-                        color: kPrimaryColor,
-                        size: favoriteIconSize,
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  width: 0.5.sw,
-                  height: 0.15.sw,
-                  child: const RiveAnimation.asset(
-                    AssetsData.favouriteAnimation,
-                    fit: BoxFit.fitWidth,
-                  ),
-                ),
-                SizedBox(height: 5.h),
-                Text(
-                  AppStrings.swipeRightToAddThisBrand.tr,
+
+          Align(
+            alignment: AlignmentDirectional.centerStart,
+            child: Text(
+              AppStrings.addToFavorites.tr,
+              style: context.theme.textTheme.titleMedium!.copyWith(
+                color: kPrimaryColor,
+              ),
+            ),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Expanded(
+                child: Text(
+                  AppStrings.saveYourFavoritesPlaces.tr,
                   style: context.theme.textTheme.bodyMedium!.copyWith(
                     color: kTextDarkColor,
                   ),
-                  textAlign: TextAlign.center,
                   maxLines: 3,
+                ),
+              ),
+              Container(
+                margin: EdgeInsetsDirectional.only(bottom: 20.h),
+                child: SvgPicture.asset(AssetsData.favoriteIconSVG),
+              ),
+            ],
+          ),
+          SizedBox(height: 20.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: kDefaultPadding.w / 2),
+            child: Stack(
+              children: [
+                for (int i = 0; i < kDummyProducts.length; i++)
+                  Transform.rotate(
+                    angle: i == kDummyProducts.length - 1
+                        ? 0
+                        : i % 2 == 0
+                            ? 0.3
+                            : -0.1,
+                    child: DismissibleTile(
+                      onDismissed: (direction) {
+                        if (direction == DismissibleTileDirection.leftToRight) {
+                          setState(() {
+                            // products.add(kDummyProducts[i]);
+                            // _changeFavoriteIconSizeWithAnimation();
+                          });
+                        } else {
+                          setState(() {
+                            // _changeHeartIconSizeWithAnimation();
+                          });
+                        }
+                      },
+                      confirmDismiss: (direction) async {
+                        return true;
+                      },
+                      onResize: () {
+                        // print(size);
+                      },
+                      onUpdate: (DismissibleTileUpdateDetails details) async {
+                        if (details.direction ==
+                            DismissibleTileDirection.rightToLeft) {
+                          // _changeHeartIconSizeWithAnimation(details.progress);
+                        }
+                      },
+                      ltrDismissedColor: kTransparentColor,
+                      rtlDismissedColor: kTransparentColor,
+                      rtlBackground: Container(
+                        padding: EdgeInsetsDirectional.only(
+                          end: kDefaultPadding.w,
+                        ),
+                        alignment: AlignmentDirectional.center,
+                        color: kTransparentColor,
+                        child: Icon(
+                          Icons.heart_broken,
+                          color: kHintColor,
+                          size: 100.r,
+                        ),
+                      ),
+                      ltrBackground: Container(
+                        padding: EdgeInsetsDirectional.only(
+                          start: kDefaultPadding.w,
+                        ),
+                        alignment: AlignmentDirectional.center,
+                        color: kTransparentColor,
+                        child: Icon(
+                          Icons.favorite,
+                          color: kPrimaryColor,
+                          size: 100.r,
+                        ),
+                      ),
+                      key: UniqueKey(),
+                      child: SingleProductItemWidget(
+                        index: i,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+          SizedBox(height: 50.h),
+          Container(
+            padding: EdgeInsets.symmetric(
+              horizontal: kDefaultPadding.w,
+            ),
+            height: 0.1.sw,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                AnimatedSize(
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                  child: Icon(
+                    Icons.heart_broken,
+                    color: kHintColor,
+                    // size: heartIconSize,
+                    size: 30.w,
+                  ),
+                ),
+                AnimatedSize(
+                  duration: const Duration(milliseconds: 500),
+                  curve: Curves.easeInOut,
+                  child: Icon(
+                    Icons.favorite,
+                    color: kPrimaryColor,
+                    // size: favoriteIconSize,
+                    size: 30.w,
+                  ),
                 ),
               ],
             ),
-          SizedBox(height: 50.h),
-          if (products.isNotEmpty)
-            Column(
+          ),
+          SizedBox(
+            width: 0.5.sw,
+            height: 0.15.sw,
+            child: const RiveAnimation.asset(
+              AssetsData.favouriteAnimation,
+              fit: BoxFit.fitWidth,
+            ),
+          ),
+          SizedBox(height: 5.h),
+          Text(
+            AppStrings.swipeRightToAddThisBrand.tr,
+            style: context.theme.textTheme.bodyMedium!.copyWith(
+              color: kTextDarkColor,
+            ),
+            textAlign: TextAlign.center,
+            maxLines: 3,
+          ),
+          SizedBox(height: 40.h),
+
+          /// Show this widget if user have favorite products
+          Visibility(
+            // visible: products.isNotEmpty,
+            child: Column(
               children: [
                 Text(
                   AppStrings.yourFavorites.tr,
@@ -208,18 +203,21 @@ class _FavoriteViewState extends State<FavoriteView> {
                 ),
                 SizedBox(height: 10.h),
                 ListView.separated(
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return const SingleProductItemWidget(
-                        index: 1,
-                      );
-                    },
-                    separatorBuilder: (context, index) =>
-                        SizedBox(height: 10.h),
-                    itemCount: products.length)
+                  shrinkWrap: true,
+                  itemCount: 0,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    return const SingleProductItemWidget(
+                      index: 1,
+                    );
+                  },
+                  separatorBuilder: (context, index) => SizedBox(height: 10.h),
+                  // itemCount: products.length,
+                )
               ],
             ),
+          ),
+          SizedBox(height: 50.h),
         ],
       ),
     );

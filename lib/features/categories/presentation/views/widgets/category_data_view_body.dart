@@ -1,3 +1,6 @@
+import 'package:ceramic_online/core/global/language/app_strings.dart';
+
+import '../../../../home/presentation/views/widgets/home_search_widget.dart';
 import '/features/widgets/single_product_item_widget.dart';
 
 import '/core/utilities/app_constance.dart';
@@ -25,6 +28,15 @@ class CategoryDataViewBody extends StatelessWidget {
               fontWeight: kFontWeightBold,
             ),
           ),
+          SizedBox(height: 10.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: kDefaultPadding.w),
+            child: HomeSearchWidget(
+              hintText: AppStrings.whatAreYouLookingFor.tr,
+              hasFilter: true,
+              onTapFilter: () {},
+            ),
+          ),
           ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -35,6 +47,7 @@ class CategoryDataViewBody extends StatelessWidget {
             itemBuilder: (context, index) {
               return const SingleProductItemWidget(
                 index: 0,
+                isCategory: true,
               );
             },
             separatorBuilder: (context, index) => SizedBox(

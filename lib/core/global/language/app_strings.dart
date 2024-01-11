@@ -112,4 +112,31 @@ class AppStrings {
   static const String online = 'online';
   static const String offline = 'offline';
   static const String enterTextHere = 'enterTextHere';
+
+  // Orders Screen
+  static const String yourOrders = 'yourOrders';
+  static const String reOrder = 'reOrder';
+  static const String rateOrder = 'rateOrder';
+  static const String rate = 'rate';
+  static const String howWasYourOrderFrom = 'howWasYourOrderFrom';
+
+  // Order Details Screen
+  static const String orderDetails = 'orderDetails';
+  static const String brandAddress = 'brandAddress';
+  static const String paymentSummary = 'paymentSummary';
+  static const String orderCode = 'orderCode';
+  static const String totalAmount = 'totalAmount';
+  static const String swipeRightToApproveOrderToDismissItSwipeLeft =
+      'swipeRightToApproveOrderToDismissItSwipeLeft';
+  static const String copied = 'copied';
+  static const String copiedCodeSuccessfully = 'copiedCodeSuccessfully';
+  static const String pressedLongTimesOnCodeToCopy =
+      'pressedLongTimesOnCodeToCopy';
+
+  // Profile Screen
+  static const String myProfile = 'myProfile';
+  static const String somethingAboutYou = 'somethingAboutYou';
+  static const String gender = 'gender';
+  static const String phoneNumber = 'phoneNumber';
+  static const String location = 'location';
 }

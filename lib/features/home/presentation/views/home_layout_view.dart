@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import '/features/order/presentation/views/orders_view.dart';
 import '/features/profile/presentation/views/profile_view.dart';
@@ -14,11 +16,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../../../core/global/language/app_strings.dart';
+import '/core/global/language/app_strings.dart';
 import 'home_view.dart';
 
 class HomeLayoutView extends StatefulWidget {
   const HomeLayoutView({super.key});
+
+  static void changeIndex({required BuildContext context, required int index}) {
+    var state = context.findAncestorStateOfType<_HomeLayoutViewState>();
+    state?.setState(() {
+      // state._currentIndex = index;
+      // state._navIndex = 0;
+      state.changeIndex(index);
+    });
+  }
 
   @override
   State<HomeLayoutView> createState() => _HomeLayoutViewState();
@@ -50,7 +61,8 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
     Icons.person,
   ];
 
-  _changeIndex(int index) {
+  changeIndex(int index) {
+    log(index.toString());
     setState(() {
       if (index == 2) {
         _navIndex = -1;
@@ -67,7 +79,10 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        haveBackIcon: false,
+        haveBackIcon: _currentIndex != 2,
+        onBack: () {
+          changeIndex(2);
+        },
         actions: [
           Padding(
             padding: EdgeInsetsDirectional.only(end: kDefaultPadding.w),
@@ -87,7 +102,7 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
         mini: false,
         shape: const CircleBorder(),
         onPressed: () {
-          _changeIndex(2);
+          changeIndex(2);
         },
         backgroundColor: _currentIndex == 2 ? kPrimaryColor : kHintColor,
         child: Padding(
@@ -114,9 +129,9 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
           activeIndex: _navIndex,
           onTap: (index) {
             if (index < 2) {
-              _changeIndex(index);
+              changeIndex(index);
             } else {
-              _changeIndex(index + 1);
+              changeIndex(index + 1);
             }
           },
           itemCount: _indexCount,

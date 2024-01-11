@@ -10,6 +10,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     this.haveBackIcon = true,
     this.titleWidget,
+    this.onBack,
   });
 
   final List<Widget>? actions;
@@ -17,6 +18,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final Widget? titleWidget;
   final bool haveBackIcon;
+  final Function? onBack;
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +36,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ? leading ??
               IconButton(
                 onPressed: () {
-                  Get.back();
+                  if (onBack != null) {
+                    onBack!();
+                  } else {
+                    Get.back();
+                  }
                 },
                 icon: const Icon(Icons.arrow_back_ios_new),
               )

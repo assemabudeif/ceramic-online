@@ -27,3 +27,5 @@ const kShimmerGradientColor = LinearGradient(
     Color(0xFFE0E0E0),
   ],
 );
+
+const kQrBorderColor = Color(0xFF6965CE);

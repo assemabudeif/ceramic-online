@@ -1,5 +1,7 @@
 import 'dart:developer';
 
+import 'package:ceramic_online/features/order/presentation/views/order_details_view.dart';
+
 import '/features/chat_with_support/presentation/view/chat_with_support_view.dart';
 
 import '/features/categories/presentation/views/categories_view.dart';
@@ -48,6 +50,9 @@ class Routes {
 
   // Chat with support Routes
   static const String chatWithSupportPath = '/chatWithSupport';
+
+  // Order Details Routes
+  static const String orderDetailsPath = '/orderDetails';
 }
 
 /// App Routes
@@ -120,6 +125,12 @@ List<GetPage<dynamic>> get appRoutes => [
       GetPage(
         name: Routes.chatWithSupportPath,
         page: () => const ChatWithSupportView(),
+      ),
+
+      // Order Details
+      GetPage(
+        name: Routes.orderDetailsPath,
+        page: () => const OrderDetailsView(),
       ),
     ];
 

@@ -116,4 +116,31 @@ Map<String, String> get enTranslations => {
       AppStrings.online: 'Online',
       AppStrings.offline: 'Offline',
       AppStrings.enterTextHere: 'Enter text here',
+
+      // Orders Screen
+      AppStrings.yourOrders: 'Your Orders',
+      AppStrings.reOrder: 'Re-Order',
+      AppStrings.rateOrder: 'Rate Order',
+      AppStrings.rate: 'Rate',
+      AppStrings.howWasYourOrderFrom: 'How was your order from ',
+
+      // Order Details Screen
+      AppStrings.orderDetails: 'Order Details',
+      AppStrings.brandAddress: 'Brand Address',
+      AppStrings.paymentSummary: 'Payment Summary',
+      AppStrings.orderCode: 'Order Code',
+      AppStrings.totalAmount: 'Total Amount',
+      AppStrings.swipeRightToApproveOrderToDismissItSwipeLeft:
+          'Swipe right to approve the order.\nSwipe left to dismiss it.',
+      AppStrings.copied: 'Copied',
+      AppStrings.copiedCodeSuccessfully: 'Copied Code Successfully',
+      AppStrings.pressedLongTimesOnCodeToCopy:
+          'Pressed long times on code to copy',
+
+      // Profile Screen
+      AppStrings.myProfile: 'My Profile',
+      AppStrings.somethingAboutYou: 'Something about you',
+      AppStrings.gender: 'Gender',
+      AppStrings.phoneNumber: 'Phone Number',
+      AppStrings.location: 'Location',
     };

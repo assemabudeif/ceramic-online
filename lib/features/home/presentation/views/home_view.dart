@@ -1,3 +1,5 @@
+import '/features/home/presentation/views/home_layout_view.dart';
+
 import '/core/global/language/app_strings.dart';
 import '/features/home/presentation/views/widgets/home_categories_list_widget.dart';
 import '/features/home/presentation/views/widgets/home_title_widget.dart';
@@ -41,7 +43,7 @@ class HomeView extends StatelessWidget {
               //
               HomeSearchWidget(
                 hintText: AppStrings.whatAreYouLookingFor.tr,
-                hasFilter: true,
+                // hasFilter: true,
                 onTapFilter: () {},
               ),
               SizedBox(height: 10.h),
@@ -56,7 +58,11 @@ class HomeView extends StatelessWidget {
               //* Categories title
               //
               HomeTitleWidget(
-                  title: AppStrings.categories.tr, onPressed: () {}),
+                title: AppStrings.categories.tr,
+                onPressed: () {
+                  HomeLayoutView.changeIndex(context: context, index: 1);
+                },
+              ),
               SizedBox(height: 10.h),
 
               //

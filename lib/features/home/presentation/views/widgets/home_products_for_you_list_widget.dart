@@ -1,3 +1,4 @@
+
 import '/core/utilities/dummy.dart';
 import '/core/utilities/routes_manger.dart';
 
@@ -50,8 +51,10 @@ class _HomeProductsForYouListWidgetState
                     child: SvgPicture.asset(
                       kDummyProducts[index].image,
                       width: 0.6.sw,
+                      fit: BoxFit.cover,
                     ),
                   ),
+                  SizedBox(height: 5.h),
                   Text(
                     kDummyProducts[index].name,
                     style: context.textTheme.bodyMedium!.copyWith(

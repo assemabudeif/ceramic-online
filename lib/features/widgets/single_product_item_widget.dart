@@ -1,3 +1,5 @@
+import 'package:ceramic_online/core/utilities/assets_data.dart';
+
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/app_constance.dart';
 import '/core/utilities/dummy.dart';
@@ -11,8 +13,10 @@ class SingleProductItemWidget extends StatelessWidget {
   const SingleProductItemWidget({
     super.key,
     required this.index,
+    this.isCategory = false,
   });
   final int index;
+  final bool isCategory;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +25,6 @@ class SingleProductItemWidget extends StatelessWidget {
         Get.toNamed(Routes.productDetailsPath);
       },
       child: Container(
-        width: 1.sw,
         height: 0.37.sh,
         decoration: BoxDecoration(
           color: kWhiteColor,
@@ -41,13 +44,16 @@ class SingleProductItemWidget extends StatelessWidget {
                 ),
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 child: SvgPicture.asset(
-                  kDummyProducts[index].image,
-                  // width: 1.sw,
+                  isCategory
+                      ? AssetsData.product2CeramicSVG
+                      : kDummyProducts[index].image,
+                  width: 1.sw,
                   fit: BoxFit.cover,
                   // height: 0.3.sw,
                 ),
               ),
             ),
+            SizedBox(height: 2.h),
             Text(
               kDummyProducts[index].name,
               style: context.textTheme.titleMedium?.copyWith(

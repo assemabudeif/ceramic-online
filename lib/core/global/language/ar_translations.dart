@@ -113,4 +113,30 @@ Map<String, String> get arTranslations => {
       AppStrings.online: 'متصل',
       AppStrings.offline: 'غير متصل',
       AppStrings.enterTextHere: 'أدخل النص هنا',
+
+      // Orders Screen
+      AppStrings.yourOrders: 'طلباتك',
+      AppStrings.reOrder: 'إعادة طلب',
+      AppStrings.rateOrder: 'تقييم الطلب',
+      AppStrings.rate: 'تقييم',
+      AppStrings.howWasYourOrderFrom: 'كيف كان طلبك من ',
+
+      // Order Details Screen
+      AppStrings.orderDetails: 'تفاصيل الطلب',
+      AppStrings.brandAddress: 'عنوان العلامة التجارية',
+      AppStrings.paymentSummary: 'ملخص الدفع',
+      AppStrings.orderCode: 'رمز الطلب',
+      AppStrings.totalAmount: 'المبلغ الإجمالي',
+      AppStrings.swipeRightToApproveOrderToDismissItSwipeLeft:
+          'اسحب إلى اليمين للموافقة على الطلب.\n واسحب إلى اليسار لرفضه.',
+      AppStrings.copied: 'تم النسخ',
+      AppStrings.copiedCodeSuccessfully: 'تم نسخ الكود بنجاح',
+      AppStrings.pressedLongTimesOnCodeToCopy: 'اضغط مطولا على الكود لنسخه',
+
+      // Profile Screen
+      AppStrings.myProfile: 'ملفي الشخصي',
+      AppStrings.somethingAboutYou: 'شيء ما عنك',
+      AppStrings.gender: 'الجنس',
+      AppStrings.phoneNumber: 'رقم الهاتف',
+      AppStrings.location: 'الموقع',
     };

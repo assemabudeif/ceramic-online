@@ -1,3 +1,5 @@
+import 'package:flutter/services.dart';
+
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/app_constance.dart';
@@ -53,6 +55,13 @@ class ProductAreaCalculationWidget extends StatelessWidget {
                   ),
                   alignment: Alignment.center,
                   child: TextFormField(
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [
+                      // accept only digits and dots
+                      FilteringTextInputFormatter.allow(
+                        RegExp(r'[0-9.]'),
+                      ),
+                    ],
                     style: context.textTheme.bodyMedium!.copyWith(
                       color: kTextDarkColor,
                       fontWeight: kFontWeightSemiBold,
@@ -96,6 +105,11 @@ class ProductAreaCalculationWidget extends StatelessWidget {
                   ),
                   alignment: Alignment.center,
                   child: TextFormField(
+                    keyboardType: TextInputType.number,
+                    inputFormatters: [
+                      // accept only digits and dots
+                      FilteringTextInputFormatter.allow(RegExp(r'[0-9.]')),
+                    ],
                     style: context.textTheme.bodyMedium!.copyWith(
                       color: kTextDarkColor,
                       fontWeight: kFontWeightSemiBold,

@@ -1,3 +1,5 @@
+import 'package:ceramic_online/core/utilities/assets_data.dart';
+
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/app_constance.dart';
@@ -12,10 +14,12 @@ class ProductDetailsHeaderWidget extends StatefulWidget {
   const ProductDetailsHeaderWidget({super.key});
 
   @override
-  State<ProductDetailsHeaderWidget> createState() => _ProductDetailsHeaderWidgetState();
+  State<ProductDetailsHeaderWidget> createState() =>
+      _ProductDetailsHeaderWidgetState();
 }
 
-class _ProductDetailsHeaderWidgetState extends State<ProductDetailsHeaderWidget> {
+class _ProductDetailsHeaderWidgetState
+    extends State<ProductDetailsHeaderWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -23,6 +27,8 @@ class _ProductDetailsHeaderWidgetState extends State<ProductDetailsHeaderWidget>
         SvgPicture.asset(
           kDummyProducts[0].image,
           width: 1.sw,
+          // height: 0.3.sh,
+          fit: BoxFit.cover,
         ),
         Text(
           kDummyProducts[0].name,

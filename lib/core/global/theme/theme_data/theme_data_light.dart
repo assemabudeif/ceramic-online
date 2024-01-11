@@ -1,3 +1,4 @@
+import 'package:ceramic_online/core/utilities/font_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -86,7 +87,7 @@ ThemeData get getThemeDataLight => ThemeData.light().copyWith(
       primaryTextTheme: TextTheme(
         titleLarge: getBoldStyle,
         titleMedium: getSemiBoldStyle,
-        titleSmall: getMediumStyle,
+        titleSmall: getMediumStyle.copyWith(fontWeight: kFontWeightBold),
         bodyLarge: getMediumStyle,
         bodyMedium: getRegularStyle,
         bodySmall: getLightStyle,
