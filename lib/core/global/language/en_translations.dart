@@ -102,6 +102,9 @@ Map<String, String> get enTranslations => {
       AppStrings.piece: 'Piece',
       AppStrings.oftenOrdersWith: 'Often orders with',
       AppStrings.otherBrands: 'Other Brands',
+      AppStrings.addedToCartSuccessfully: 'Added to cart successfully',
+      AppStrings.goToBack: 'Go back',
+      AppStrings.goToHome: 'Go to home',
 
       // Favorite Screen
       AppStrings.addToFavorites: 'Add to favorites',
@@ -143,4 +146,15 @@ Map<String, String> get enTranslations => {
       AppStrings.gender: 'Gender',
       AppStrings.phoneNumber: 'Phone Number',
       AppStrings.location: 'Location',
+
+      // Cart Screen
+      AppStrings.basket: 'Basket',
+      AppStrings.specialRequest: 'Special Request',
+      AppStrings.addANote: 'Add a note',
+      AppStrings.anythingElseWeNeedToKnow: 'Anything else we need to know?',
+      AppStrings.checkout: 'Checkout',
+      AppStrings.addItems: 'Add Items',
+      AppStrings.successful: 'Successful',
+      AppStrings.goToBrandAndScanQrCodeToBuyItems:
+          'Go to brand and scan QR code to buy items',
     };

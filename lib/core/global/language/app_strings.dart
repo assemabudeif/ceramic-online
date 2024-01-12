@@ -100,6 +100,9 @@ class AppStrings {
   static const String piece = 'piece';
   static const String oftenOrdersWith = 'oftenOrdersWith';
   static const String otherBrands = 'otherBrands';
+  static const String addedToCartSuccessfully = 'addedToCartSuccessfully';
+  static const String goToBack = 'goToBack';
+  static const String goToHome = 'goToHome';
 
   // Favourite Screen
   static const String addToFavorites = 'addToFavorites';
@@ -139,4 +142,15 @@ class AppStrings {
   static const String gender = 'gender';
   static const String phoneNumber = 'phoneNumber';
   static const String location = 'location';
+
+  // Cart Screen
+  static const String basket = 'basket';
+  static const String specialRequest = 'specialRequest';
+  static const String addANote = 'addANote';
+  static const String anythingElseWeNeedToKnow = 'anythingElseWeNeedToKnow';
+  static const String checkout = 'checkout';
+  static const String addItems = 'addItems';
+  static const String successful = 'successful';
+  static const String goToBrandAndScanQrCodeToBuyItems =
+      'goToBrandAndScanQrCodeToBuyItems';
 }

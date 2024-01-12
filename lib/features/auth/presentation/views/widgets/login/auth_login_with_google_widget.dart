@@ -39,7 +39,7 @@ class AuthLoginWithGoogleWidget extends StatelessWidget {
                     horizontal: 1.w,
                   ),
                   child: CircleAvatar(
-                    minRadius: 17.w,
+                    minRadius: 14.sp,
                     backgroundColor: kWhiteColor,
                     child: SvgPicture.asset(
                       AssetsData.googleSvg,

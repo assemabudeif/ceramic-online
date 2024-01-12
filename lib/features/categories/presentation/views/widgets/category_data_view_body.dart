@@ -1,4 +1,4 @@
-import 'package:ceramic_online/core/global/language/app_strings.dart';
+import '/core/global/language/app_strings.dart';
 
 import '../../../../home/presentation/views/widgets/home_search_widget.dart';
 import '/features/widgets/single_product_item_widget.dart';

@@ -1,16 +1,22 @@
-import 'package:ceramic_online/core/global/language/app_strings.dart';
-import 'package:ceramic_online/core/utilities/font_manger.dart';
+import '/core/global/language/app_strings.dart';
+import '/core/utilities/font_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class OrderDetailsSummaryWidget extends StatelessWidget {
-  const OrderDetailsSummaryWidget({super.key});
+class CustomPaymentSummaryWidget extends StatelessWidget {
+  const CustomPaymentSummaryWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Text(
+          AppStrings.paymentSummary.tr,
+          style: context.textTheme.titleMedium,
+        ),
+        SizedBox(height: 10.h),
         ...[
           'Ceramic Black',
           'Tap Black',

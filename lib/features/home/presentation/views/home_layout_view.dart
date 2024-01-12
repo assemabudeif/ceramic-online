@@ -1,6 +1,7 @@
 import 'dart:developer';
 
 import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
+import '/core/utilities/routes_manger.dart';
 import '/features/order/presentation/views/orders_view.dart';
 import '/features/profile/presentation/views/profile_view.dart';
 import '/features/favorites/presentation/views/favorite_view.dart';
@@ -87,9 +88,36 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
           Padding(
             padding: EdgeInsetsDirectional.only(end: kDefaultPadding.w),
             child: InkWell(
-              onTap: () {},
-              child: SvgPicture.asset(
-                AssetsData.cartIconSVG,
+              onTap: () {
+                Get.toNamed(Routes.cartPath);
+              },
+              child: Stack(
+                children: [
+                  SvgPicture.asset(
+                    AssetsData.cartIconSVG,
+                  ),
+                  PositionedDirectional(
+                    top: 0,
+                    end: 0,
+                    child: Container(
+                      width: 15.w,
+                      height: 15.h,
+                      decoration: BoxDecoration(
+                        color: kPrimaryColor,
+                        shape: BoxShape.circle,
+                      ),
+                      child: Center(
+                        child: Text(
+                          '1',
+                          style: context.textTheme.bodySmall!.copyWith(
+                            color: kWhiteColor,
+                            fontWeight: kFontWeightSemiBold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ),

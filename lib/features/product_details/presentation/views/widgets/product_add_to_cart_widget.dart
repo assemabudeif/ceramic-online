@@ -1,8 +1,9 @@
+import 'package:ceramic_online/features/widgets/show_add_to_cart_widget.dart';
+
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/app_constance.dart';
 import '/core/utilities/font_manger.dart';
-import '/core/utilities/routes_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -20,7 +21,8 @@ class ProductAddToCartWidget extends StatelessWidget {
       ),
       child: MaterialButton(
         onPressed: () {
-          Get.offAllNamed(Routes.homeLayoutPath);
+          showAddToCartDialog();
+          // Get.offAllNamed(Routes.homeLayoutPath);
         },
         color: kPrimaryColor,
         shape: RoundedRectangleBorder(

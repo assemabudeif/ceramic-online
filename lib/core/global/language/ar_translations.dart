@@ -99,6 +99,9 @@ Map<String, String> get arTranslations => {
       AppStrings.piece: 'قطعة',
       AppStrings.oftenOrdersWith: 'غالبًا ما يطلب مع',
       AppStrings.otherBrands: 'علامات تجارية أخرى',
+      AppStrings.addedToCartSuccessfully: 'تمت الإضافة إلى السلة بنجاح',
+      AppStrings.goToBack: 'الذهاب للخلف',
+      AppStrings.goToHome: 'الذهاب إلى الرئيسية',
 
       // Favorite Screen
       AppStrings.addToFavorites: 'أضف إلى المفضلة',
@@ -139,4 +142,15 @@ Map<String, String> get arTranslations => {
       AppStrings.gender: 'الجنس',
       AppStrings.phoneNumber: 'رقم الهاتف',
       AppStrings.location: 'الموقع',
+
+      // Cart Screen
+      AppStrings.basket: 'السلة',
+      AppStrings.specialRequest: 'طلب خاص',
+      AppStrings.addANote: 'أضف ملاحظة',
+      AppStrings.anythingElseWeNeedToKnow: 'هل هناك أي شيء آخر نحتاج معرفته؟',
+      AppStrings.checkout: 'الدفع',
+      AppStrings.addItems: 'أضف عناصر',
+      AppStrings.successful: 'ناجح',
+      AppStrings.goToBrandAndScanQrCodeToBuyItems:
+          'انتقل إلى العلامة التجارية ومسح رمز الاستجابة السريعة لشراء العناصر',
     };

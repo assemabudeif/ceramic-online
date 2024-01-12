@@ -1,6 +1,9 @@
 import 'dart:developer';
 
-import 'package:ceramic_online/features/order/presentation/views/order_details_view.dart';
+import 'package:ceramic_online/features/cart/presentation/views/checkout_view.dart';
+
+import '/features/cart/presentation/views/cart_view.dart';
+import '/features/order/presentation/views/order_details_view.dart';
 
 import '/features/chat_with_support/presentation/view/chat_with_support_view.dart';
 
@@ -53,6 +56,10 @@ class Routes {
 
   // Order Details Routes
   static const String orderDetailsPath = '/orderDetails';
+
+  // Cart Routes
+  static const String cartPath = '/cart';
+  static const String checkoutPath = '/checkout';
 }
 
 /// App Routes
@@ -131,6 +138,16 @@ List<GetPage<dynamic>> get appRoutes => [
       GetPage(
         name: Routes.orderDetailsPath,
         page: () => const OrderDetailsView(),
+      ),
+
+      // Cart Screens
+      GetPage(
+        name: Routes.cartPath,
+        page: () => const CartView(),
+      ),
+      GetPage(
+        name: Routes.checkoutPath,
+        page: () => const CheckoutView(),
       ),
     ];
 

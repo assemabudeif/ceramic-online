@@ -27,7 +27,7 @@ class AssetsData {
   static const String locationIconSVG = '${_baseSVGsPath}location.svg';
   static const String notificationIconSVG = '${_baseSVGsPath}notification.svg';
   static const String favoriteIconSVG = '${_baseSVGsPath}favorite.svg';
-  static const String disFavoriteIconSVG = '${_baseSVGsPath}dis_favorite.svg';
+  static const String noteIconSVG = '${_baseSVGsPath}noteIcon.svg';
   static const String mapLocationImageSVG = '${_baseSVGsPath}mapLocation.svg';
 
   /// Animations

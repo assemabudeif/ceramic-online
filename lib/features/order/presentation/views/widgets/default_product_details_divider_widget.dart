@@ -1,4 +1,4 @@
-import 'package:ceramic_online/core/global/theme/app_colors_light.dart';
+import '/core/global/theme/app_colors_light.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

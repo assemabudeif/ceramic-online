@@ -1,4 +1,4 @@
-import 'package:ceramic_online/core/utilities/assets_data.dart';
+import '/core/utilities/assets_data.dart';
 
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';

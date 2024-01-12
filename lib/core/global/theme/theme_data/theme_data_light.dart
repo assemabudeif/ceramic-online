@@ -1,4 +1,4 @@
-import 'package:ceramic_online/core/utilities/font_manger.dart';
+import '/core/utilities/font_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

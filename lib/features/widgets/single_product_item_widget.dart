@@ -1,4 +1,4 @@
-import 'package:ceramic_online/core/utilities/assets_data.dart';
+import '/core/utilities/assets_data.dart';
 
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/app_constance.dart';
@@ -44,12 +44,9 @@ class SingleProductItemWidget extends StatelessWidget {
                 ),
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 child: SvgPicture.asset(
-                  isCategory
-                      ? AssetsData.product2CeramicSVG
-                      : kDummyProducts[index].image,
+                  kDummyProducts[index].image,
                   width: 1.sw,
                   fit: BoxFit.cover,
-                  // height: 0.3.sw,
                 ),
               ),
             ),

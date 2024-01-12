@@ -1,3 +1,4 @@
+import 'package:ceramic_online/features/widgets/show_add_to_cart_widget.dart';
 
 import '/core/utilities/dummy.dart';
 import '/core/utilities/routes_manger.dart';
@@ -91,7 +92,11 @@ class _HomeProductsForYouListWidgetState
                   Row(
                     children: [
                       MaterialButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          showAddToCartDialog(
+                            isInHome: true,
+                          );
+                        },
                         color: kPrimaryColor,
                         minWidth: 0.09.sw,
                         height: 0.04.sh,

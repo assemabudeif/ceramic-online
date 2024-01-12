@@ -1,6 +1,8 @@
 import 'dart:developer';
 
 import 'package:animate_do/animate_do.dart';
+import 'package:ceramic_online/features/favorites/presentation/view_models/favorite_cubit.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/app_constance.dart';
@@ -21,8 +23,36 @@ class FavoriteView extends StatefulWidget {
   State<FavoriteView> createState() => _FavoriteViewState();
 }
 
-class _FavoriteViewState extends State<FavoriteView>
-    with TickerProviderStateMixin {
+class _FavoriteViewState extends State<FavoriteView> {
+  double favoriteIconSize = 30.w;
+
+  double heartIconSize = 30.w;
+
+  List<ProductModel> products = [];
+  _changeHeartIconSizeWithAnimation(double progress) {
+    log('progress: $progress');
+
+    setState(() {
+      heartIconSize = 45.w;
+    });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        heartIconSize = 30.w;
+      });
+    });
+  }
+
+  _changeFavoriteIconSizeWithAnimation(
+    double progress,
+  ) {
+    setState(() {
+      Future.delayed(const Duration(milliseconds: 500), () {
+        favoriteIconSize = 30.w + (progress * 15);
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -85,26 +115,35 @@ class _FavoriteViewState extends State<FavoriteView>
                       onDismissed: (direction) {
                         if (direction == DismissibleTileDirection.leftToRight) {
                           setState(() {
-                            // products.add(kDummyProducts[i]);
-                            // _changeFavoriteIconSizeWithAnimation();
+                            products.add(kDummyProducts[i]);
+                            _changeFavoriteIconSizeWithAnimation(0);
                           });
                         } else {
                           setState(() {
-                            // _changeHeartIconSizeWithAnimation();
+                            _changeHeartIconSizeWithAnimation(0);
                           });
                         }
                       },
-                      confirmDismiss: (direction) async {
-                        return true;
-                      },
-                      onResize: () {
-                        // print(size);
-                      },
-                      onUpdate: (DismissibleTileUpdateDetails details) async {
-                        if (details.direction ==
-                            DismissibleTileDirection.rightToLeft) {
-                          // _changeHeartIconSizeWithAnimation(details.progress);
-                        }
+                      onUpdate: (DismissibleTileUpdateDetails details) {
+                        details.direction ==
+                                DismissibleTileDirection.rightToLeft
+                            ? _changeHeartIconSizeWithAnimation(
+                                details.progress,
+                              )
+                            : _changeFavoriteIconSizeWithAnimation(
+                                details.progress,
+                              );
+
+                        // if (details.direction ==
+                        //     DismissibleTileDirection.rightToLeft) {
+                        //   _changeHeartIconSizeWithAnimation(
+                        //     details.progress,
+                        //   );
+                        // } else {
+                        //   _changeFavoriteIconSizeWithAnimation(
+                        //     details.progress,
+                        //   );
+                        // }
                       },
                       ltrDismissedColor: kTransparentColor,
                       rtlDismissedColor: kTransparentColor,
@@ -150,25 +189,16 @@ class _FavoriteViewState extends State<FavoriteView>
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                AnimatedSize(
-                  duration: const Duration(milliseconds: 500),
-                  curve: Curves.easeInOut,
-                  child: Icon(
-                    Icons.heart_broken,
-                    color: kHintColor,
-                    // size: heartIconSize,
-                    size: 30.w,
-                  ),
+                Icon(
+                  Icons.heart_broken,
+                  color: kHintColor,
+                  size: heartIconSize,
+                  // size: 30.w,
                 ),
-                AnimatedSize(
-                  duration: const Duration(milliseconds: 500),
-                  curve: Curves.easeInOut,
-                  child: Icon(
-                    Icons.favorite,
-                    color: kPrimaryColor,
-                    // size: favoriteIconSize,
-                    size: 30.w,
-                  ),
+                Icon(
+                  Icons.favorite,
+                  color: kPrimaryColor,
+                  size: favoriteIconSize,
                 ),
               ],
             ),
@@ -194,7 +224,7 @@ class _FavoriteViewState extends State<FavoriteView>
 
           /// Show this widget if user have favorite products
           Visibility(
-            // visible: products.isNotEmpty,
+            visible: products.isNotEmpty,
             child: Column(
               children: [
                 Text(
@@ -204,7 +234,7 @@ class _FavoriteViewState extends State<FavoriteView>
                 SizedBox(height: 10.h),
                 ListView.separated(
                   shrinkWrap: true,
-                  itemCount: 0,
+                  itemCount: products.length,
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     return const SingleProductItemWidget(
