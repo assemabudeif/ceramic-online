@@ -1,4 +1,4 @@
-import 'package:ceramic_online/features/widgets/show_add_to_cart_widget.dart';
+import '/features/widgets/show_add_to_cart_widget.dart';
 
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';

@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:ceramic_online/features/cart/presentation/views/checkout_view.dart';
+import '/features/cart/presentation/views/checkout_view.dart';
 
 import '/features/cart/presentation/views/cart_view.dart';
 import '/features/order/presentation/views/order_details_view.dart';

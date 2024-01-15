@@ -1,4 +1,4 @@
-import 'package:ceramic_online/core/global/language/language_manger.dart';
+import '/core/global/language/language_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'home_layout_imports.dart';
@@ -8,11 +8,9 @@ class HomeLayoutView extends StatefulWidget {
 
   static void changeIndex({required BuildContext context, required int index}) {
     var state = context.findAncestorStateOfType<_HomeLayoutViewState>();
-    state?.setState(() {
-      // state._currentIndex = index;
-      // state._navIndex = 0;
-      state.changeIndex(index);
-    });
+
+    state?.changeIndex(index);
+    state?.refresh();
   }
 
   @override
@@ -21,6 +19,8 @@ class HomeLayoutView extends StatefulWidget {
 
 class _HomeLayoutViewState extends State<HomeLayoutView> {
   final int _indexCount = 4;
+  refresh() => setState(() {});
+
   final List<Widget> _screens = [
     const FavoriteView(),
     const CategoriesView(),

@@ -1,4 +1,4 @@
-import 'package:ceramic_online/features/widgets/show_add_to_cart_widget.dart';
+import '/features/widgets/show_add_to_cart_widget.dart';
 
 import '/core/utilities/dummy.dart';
 import '/core/utilities/routes_manger.dart';
