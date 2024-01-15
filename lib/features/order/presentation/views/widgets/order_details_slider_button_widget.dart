@@ -10,24 +10,26 @@ class OrderDetailsSliderButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ActionSlider.dual(
-      backgroundColor: kTextDarkColor.withOpacity(0.8),
-      height: 55.h,
-      iconAlignment: Alignment.center,
-      sliderBehavior: SliderBehavior.move,
-      loadingIcon: _loadingIconWidget(),
-      successIcon: _successIconWidget(),
-      failureIcon: _failureIconWidget(),
-      icon: _iconWidget(),
-      boxShadow: [
-        BoxShadow(
-          color: kHintColor.withOpacity(0),
-          blurRadius: 0,
-          offset: const Offset(0, 0),
-        ),
-      ],
-      startAction: _startActionHandler,
-      endAction: _endActionHandler,
+    return Center(
+      child: ActionSlider.dual(
+        backgroundColor: kTextDarkColor.withOpacity(0.8),
+        height: 55.h,
+        iconAlignment: Alignment.center,
+        sliderBehavior: SliderBehavior.move,
+        loadingIcon: _loadingIconWidget(),
+        successIcon: _successIconWidget(),
+        failureIcon: _failureIconWidget(),
+        icon: _iconWidget(),
+        boxShadow: [
+          BoxShadow(
+            color: kHintColor.withOpacity(0),
+            blurRadius: 0,
+            offset: const Offset(0, 0),
+          ),
+        ],
+        startAction: _startActionHandler,
+        endAction: _endActionHandler,
+      ),
     );
   }
 
