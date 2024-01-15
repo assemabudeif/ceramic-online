@@ -1,4 +1,3 @@
-import '/core/utilities/assets_data.dart';
 
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/app_constance.dart';

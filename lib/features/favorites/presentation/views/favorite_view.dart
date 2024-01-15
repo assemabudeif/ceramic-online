@@ -1,10 +1,5 @@
-import 'dart:developer';
-import 'dart:ui';
 
-import 'package:animate_do/animate_do.dart';
 import 'package:ceramic_online/core/global/language/language_manger.dart';
-import 'package:ceramic_online/features/favorites/presentation/view_models/favorite_cubit.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/app_constance.dart';
