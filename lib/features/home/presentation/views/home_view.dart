@@ -1,3 +1,5 @@
+import '/features/widgets/custom_search_widget.dart';
+
 import '/features/home/presentation/views/home_layout_view.dart';
 
 import '/core/global/language/app_strings.dart';
@@ -13,7 +15,6 @@ import 'widgets/home_banner_widget.dart';
 import 'widgets/home_best_sales_list_widget.dart';
 import 'widgets/home_header_widget.dart';
 import 'widgets/home_products_for_you_list_widget.dart';
-import '../../../widgets/custom_search_widget.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -32,31 +33,19 @@ class HomeView extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              //
-              //* Header
-              //
+              /// Header
               const HomeHeaderWidget(),
               SizedBox(height: 10.h),
 
-              //
-              //* Search
-              //
-              CustomSearchWidget(
-                hintText: AppStrings.whatAreYouLookingFor.tr,
-                // hasFilter: true,
-                onTapFilter: () {},
-              ),
+              /// Search
+              CustomSearchWidget(hintText: AppStrings.whatAreYouLookingFor.tr),
               SizedBox(height: 10.h),
 
-              //
-              //* Banner
-              //
+              /// Banner
               const HomeBannerWidget(),
               SizedBox(height: 10.h),
 
-              //
-              //* Categories title
-              //
+              /// Categories title
               HomeTitleWidget(
                 title: AppStrings.categories.tr,
                 onPressed: () {
@@ -66,38 +55,22 @@ class HomeView extends StatelessWidget {
               ),
               SizedBox(height: 10.h),
 
-              //
-              //* Categories
-              //
+              /// Categories
               const HomeCategoriesListWidget(),
 
-              //
-              //* Products for you title
-              //
-              HomeTitleWidget(
-                title: AppStrings.productsForYou.tr,
-                onPressed: () {},
-              ),
+              /// Products for you title
+              HomeTitleWidget(title: AppStrings.productsForYou.tr),
               SizedBox(height: 10.h),
 
-              //
-              //* Products for you list
-              //
+              /// Products for you list
               const HomeProductsForYouListWidget(),
               SizedBox(height: 20.h),
 
-              //
-              //* Best sales title
-              //
-              HomeTitleWidget(
-                title: AppStrings.bestSales.tr,
-                onPressed: () {},
-              ),
+              /// Best sales title
+              HomeTitleWidget(title: AppStrings.bestSales.tr),
               SizedBox(height: 10.h),
 
-              //
-              //* Best sales list
-              //
+              /// Best sales list
               const HomeBestSalesListWidget(),
               SizedBox(height: 40.h),
             ],

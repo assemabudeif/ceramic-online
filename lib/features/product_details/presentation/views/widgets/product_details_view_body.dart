@@ -22,9 +22,7 @@ class ProductDetailsViewBody extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        //
-        //* Body of Product  Details
-        //
+        /// Body of Product  Details
         Expanded(
           child: SingleChildScrollView(
             physics: const BouncingScrollPhysics(
@@ -36,28 +34,20 @@ class ProductDetailsViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //
-                //* Product Details
-                //
+                /// Product Details
                 const ProductDetailsHeaderWidget(),
                 const DefaultProductDetailsDivider(),
 
-                //
-                //* Your Choice of Size
-                //
+                /// Your Choice of Size
                 const ProductChoiceSizeWidget(),
 
                 const DefaultProductDetailsDivider(),
 
-                //
-                //* Area Calculation
-                //
+                /// Area Calculation
                 const ProductAreaCalculationWidget(),
                 const DefaultProductDetailsDivider(),
 
-                //
-                //* Often orders with title
-                //
+                /// Often orders with title
                 Text(
                   AppStrings.oftenOrdersWith.tr,
                   style: context.textTheme.titleMedium!.copyWith(
@@ -65,16 +55,13 @@ class ProductDetailsViewBody extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: kDefaultPadding.h),
-                //
-                //* Often orders with List
-                //
+
+                /// Often orders with List
                 const HomeProductsForYouListWidget(),
                 SizedBox(height: kDefaultPadding.h),
                 const DefaultProductDetailsDivider(),
 
-                //
-                //* Other Brands title
-                //
+                /// Other Brands title
                 Text(
                   AppStrings.otherBrands.tr,
                   style: context.textTheme.titleMedium!.copyWith(
@@ -83,8 +70,7 @@ class ProductDetailsViewBody extends StatelessWidget {
                 ),
                 SizedBox(height: kDefaultPadding.h),
 
-                //
-                //* Other Brands List
+                /// Other Brands List
                 const HomeBestSalesListWidget(),
                 SizedBox(
                   height: 20.h,
@@ -94,9 +80,7 @@ class ProductDetailsViewBody extends StatelessWidget {
           ),
         ),
 
-        //
-        //* Add To Cart Footer
-        //
+        /// Add To Cart Footer
         const ProductAddToCartWidget(),
       ],
     );

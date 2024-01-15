@@ -3,8 +3,8 @@ import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../services/services_locator.dart';
-import '../../services/shared_key.dart';
+import '/core/services/services_locator.dart';
+import '/core/services/shared_key.dart';
 
 enum Language { en, ar }
 

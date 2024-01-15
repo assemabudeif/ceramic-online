@@ -1,7 +1,7 @@
 import 'assets_data.dart';
 
 //
-//* Category Dummy Model
+/// Category Dummy Model
 //
 class CategoryModel {
   final String name;
@@ -14,7 +14,7 @@ class CategoryModel {
 }
 
 //
-//* Product Dummy Model
+/// Product Dummy Model
 //
 class ProductModel {
   final String name;
@@ -33,10 +33,10 @@ class ProductModel {
 }
 
 //
-//* Dummy Data
+/// Dummy Data
 //
 
-//* Dummy Products
+/// Dummy Products
 final List<ProductModel> kDummyProducts = [
   for (int i = 0; i < 10; i++)
     ProductModel(
@@ -49,7 +49,7 @@ final List<ProductModel> kDummyProducts = [
     ),
 ];
 
-//* Dummy Categories
+/// Dummy Categories
 final List<CategoryModel> kDummyCategories = [
   CategoryModel(
     name: 'Ceramic',

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import '../network/api_constance.dart';
+import '/core/network/api_constance.dart';
 
 class DioLogger {
   static Dio getDio() {

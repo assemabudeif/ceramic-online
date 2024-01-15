@@ -1,3 +1,5 @@
+import '/features/widgets/custom_search_widget.dart';
+
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/font_manger.dart';
@@ -7,7 +9,6 @@ import 'package:get/get.dart';
 
 import '/core/utilities/app_constance.dart';
 import '/core/utilities/routes_manger.dart';
-import '../../../../widgets/custom_search_widget.dart';
 
 class LocationDetailsViewBody extends StatelessWidget {
   const LocationDetailsViewBody({super.key});
@@ -20,9 +21,7 @@ class LocationDetailsViewBody extends StatelessWidget {
       ),
       child: Column(
         children: [
-          //
-          //* Search
-          //
+          /// Search
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: kDefaultPadding.w,
@@ -33,9 +32,7 @@ class LocationDetailsViewBody extends StatelessWidget {
             ),
           ),
 
-          //
-          //* See Ads in All Egypt
-          //
+          /// See Ads in All Egypt
           Container(
             color: kWhiteColor,
             padding: EdgeInsets.symmetric(
@@ -52,9 +49,7 @@ class LocationDetailsViewBody extends StatelessWidget {
             ),
           ),
 
-          //
-          //* All in Egypt
-          //
+          /// All in Egypt
           Container(
             padding: EdgeInsets.symmetric(
               horizontal: kDefaultPadding.w,
@@ -70,9 +65,7 @@ class LocationDetailsViewBody extends StatelessWidget {
             ),
           ),
 
-          //
-          //* Location Details List
-          //
+          /// Location Details List
           Container(
             color: kWhiteColor,
             child: ListView.separated(

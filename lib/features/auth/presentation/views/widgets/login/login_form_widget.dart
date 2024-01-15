@@ -1,4 +1,6 @@
-import '/../core/utilities/routes_manger.dart';
+import '/features/auth/presentation/views/widgets/auth_text_form_field.dart';
+
+import '/core/utilities/routes_manger.dart';
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/font_manger.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +13,6 @@ import '/core/global/language/app_strings.dart';
 import 'auth_create_new_account_button_widget.dart';
 import 'auth_login_with_apple_widget.dart';
 import 'auth_login_with_google_widget.dart';
-import '../auth_text_form_field.dart';
 import 'auth_or_widget.dart';
 
 class LoginFormWidget extends StatefulWidget {

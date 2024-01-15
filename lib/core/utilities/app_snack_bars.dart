@@ -1,4 +1,4 @@
-import '../global/theme/app_colors_light.dart';
+import '/core/global/theme/app_colors_light.dart';
 import 'package:flutter/material.dart';
 
 class AppSnackBars {

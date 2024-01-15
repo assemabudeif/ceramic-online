@@ -1,10 +1,11 @@
+import '/features/widgets/custom_search_widget.dart';
+
 import '/core/utilities/routes_manger.dart';
 
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/app_constance.dart';
 import '/core/utilities/font_manger.dart';
-import '../../../../widgets/custom_search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -20,9 +21,7 @@ class LocationViewBody extends StatelessWidget {
       ),
       child: Column(
         children: [
-          //
-          //* Search
-          //
+          /// Search
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: kDefaultPadding.w,
@@ -33,9 +32,7 @@ class LocationViewBody extends StatelessWidget {
             ),
           ),
 
-          //
-          //* Use current location
-          //
+          /// Use current location
           Container(
             color: kWhiteColor,
             padding: EdgeInsets.symmetric(
@@ -80,9 +77,7 @@ class LocationViewBody extends StatelessWidget {
             ),
           ),
 
-          //
-          //* Recent title
-          //
+          /// Recent title
           Padding(
             padding: EdgeInsets.symmetric(
               vertical: kDefaultPadding.h / 2,
@@ -101,9 +96,7 @@ class LocationViewBody extends StatelessWidget {
             ),
           ),
 
-          //
-          //* Recent list
-          //
+          /// Recent list
           Container(
             color: kWhiteColor,
             child: ListView.separated(
@@ -138,9 +131,7 @@ class LocationViewBody extends StatelessWidget {
             ),
           ),
 
-          //
-          //* Choose region title
-          //
+          /// Choose region title
           Container(
             padding: EdgeInsets.symmetric(
               vertical: kDefaultPadding.h / 2,
@@ -156,9 +147,7 @@ class LocationViewBody extends StatelessWidget {
             ),
           ),
 
-          //
-          //* Choose region list
-          //
+          /// Choose region list
           Container(
             color: kWhiteColor,
             child: ListView.separated(

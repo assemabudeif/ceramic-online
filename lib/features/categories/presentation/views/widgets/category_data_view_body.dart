@@ -1,6 +1,7 @@
+import '/features/widgets/custom_search_widget.dart';
+
 import '/core/global/language/app_strings.dart';
 
-import '../../../../widgets/custom_search_widget.dart';
 import '/features/widgets/single_product_item_widget.dart';
 
 import '/core/utilities/app_constance.dart';

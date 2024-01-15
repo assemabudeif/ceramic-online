@@ -8,12 +8,12 @@ class HomeTitleWidget extends StatelessWidget {
   const HomeTitleWidget({
     super.key,
     required this.title,
-    required this.onPressed,
+    this.onPressed,
     this.haveSeeAll = false,
   });
 
   final String title;
-  final Function onPressed;
+  final Function? onPressed;
   final bool haveSeeAll;
 
   @override
@@ -31,7 +31,9 @@ class HomeTitleWidget extends StatelessWidget {
           visible: haveSeeAll,
           child: InkWell(
             onTap: () {
-              onPressed();
+              if (onPressed != null) {
+                onPressed!();
+              }
             },
             child: Text(
               AppStrings.seeAll.tr,

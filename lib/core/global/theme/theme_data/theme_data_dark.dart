@@ -1,12 +1,10 @@
+import '/core/global/theme/app_colors_light.dart';
+import '/core/global/theme/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../app_colors_light.dart';
-import '../text_style.dart';
-
-
 ThemeData get getThemeDataDark => ThemeData.dark().copyWith(
-     /// Theme Colors
+      /// Theme Colors
       // primaryColor: kPrimaryColor,
       // scaffoldBackgroundColor: kDefaultBackground,
       // hintColor: kHintColor,
@@ -21,7 +19,7 @@ ThemeData get getThemeDataDark => ThemeData.dark().copyWith(
       // ),
 
       // /// App Bar Theme
-       /// App Bar Theme
+      /// App Bar Theme
       appBarTheme: AppBarTheme(
         elevation: 0,
         color: kDefaultBackground,
@@ -138,5 +136,4 @@ ThemeData get getThemeDataDark => ThemeData.dark().copyWith(
           minimumSize: Size(0.5.sw, 30.h),
         ),
       ),
-
     );

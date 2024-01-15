@@ -1,16 +1,17 @@
+import '/features/widgets/custom_payment_summary_widget.dart';
+import '/features/widgets/custom_qr_code_title_widget.dart';
+
 import '/core/global/language/app_strings.dart';
 import '/core/global/widgets/custom_app_bar.dart';
 import '/core/utilities/app_constance.dart';
 import '/core/utilities/assets_data.dart';
 import '/features/widgets/custom_qr_code_widget.dart';
-import '../../../widgets/custom_payment_summary_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:rive/rive.dart';
 
 import 'widgets/default_product_details_divider_widget.dart';
-import '../../../widgets/custom_qr_code_title_widget.dart';
 import 'widgets/order_details_products_details_widget.dart';
 import 'widgets/order_details_slider_button_widget.dart';
 

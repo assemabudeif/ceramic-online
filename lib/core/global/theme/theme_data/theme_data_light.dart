@@ -1,9 +1,9 @@
+import '/core/global/theme/app_colors_light.dart';
+import '/core/global/theme/text_style.dart';
+
 import '/core/utilities/font_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../app_colors_light.dart';
-import '../text_style.dart';
 
 ThemeData get getThemeDataLight => ThemeData.light().copyWith(
       /// Theme Colors
