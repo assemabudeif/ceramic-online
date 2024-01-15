@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 
 import '/core/utilities/app_constance.dart';
 import '/core/utilities/routes_manger.dart';
-import '../../../../home/presentation/views/widgets/home_search_widget.dart';
+import '../../../../widgets/custom_search_widget.dart';
 
 class LocationDetailsViewBody extends StatelessWidget {
   const LocationDetailsViewBody({super.key});
@@ -28,7 +28,7 @@ class LocationDetailsViewBody extends StatelessWidget {
               horizontal: kDefaultPadding.w,
               vertical: kDefaultPadding.h,
             ),
-            child: const HomeSearchWidget(
+            child: const CustomSearchWidget(
               hintText: 'Search in Egypt',
             ),
           ),

@@ -86,6 +86,9 @@ class ProductDetailsViewBody extends StatelessWidget {
                 //
                 //* Other Brands List
                 const HomeBestSalesListWidget(),
+                SizedBox(
+                  height: 20.h,
+                )
               ],
             ),
           ),

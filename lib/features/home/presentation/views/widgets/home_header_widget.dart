@@ -21,7 +21,10 @@ class HomeHeaderWidget extends StatelessWidget {
           },
           child: Row(
             children: [
-              SvgPicture.asset(AssetsData.locationIconSVG),
+              SvgPicture.asset(
+                AssetsData.locationIconSVG,
+                height: 14.sp,
+              ),
               SizedBox(width: 5.w),
               Text(
                 'Cairo, Egypt',
@@ -38,7 +41,10 @@ class HomeHeaderWidget extends StatelessWidget {
         ),
         InkWell(
           onTap: () {},
-          child: SvgPicture.asset(AssetsData.notificationIconSVG),
+          child: SvgPicture.asset(
+            AssetsData.notificationIconSVG,
+            height: 14.sp,
+          ),
         ),
       ],
     );

@@ -1,6 +1,6 @@
 import '/core/global/language/app_strings.dart';
 
-import '../../../../home/presentation/views/widgets/home_search_widget.dart';
+import '../../../../widgets/custom_search_widget.dart';
 import '/features/widgets/single_product_item_widget.dart';
 
 import '/core/utilities/app_constance.dart';
@@ -31,7 +31,7 @@ class CategoryDataViewBody extends StatelessWidget {
           SizedBox(height: 10.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: kDefaultPadding.w),
-            child: HomeSearchWidget(
+            child: CustomSearchWidget(
               hintText: AppStrings.whatAreYouLookingFor.tr,
               hasFilter: true,
               onTapFilter: () {},

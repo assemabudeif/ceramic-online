@@ -16,7 +16,7 @@ class LoginViewBody extends StatelessWidget {
         children: [
           const LoginLogoWidget(),
           SlideInUp(
-            delay: const Duration(seconds: 2),
+            delay: const Duration(seconds: 1),
             animate: true,
             child: const LoginFormWidget(),
           ),

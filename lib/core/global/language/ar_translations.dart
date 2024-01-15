@@ -5,6 +5,9 @@ Map<String, String> get arTranslations => {
       AppStrings.appName: 'السيراميك اون لاين',
       AppStrings.invalidPageName: 'اسم الصفحة غير صحيح',
       AppStrings.changeLanguage: 'تغيير اللغة',
+      AppStrings.exit: 'الخروج',
+      AppStrings.areYouSureToExitApp: 'هل أنت متأكد من الخروج من التطبيق؟',
+      AppStrings.cancel: 'إلغاء',
 
       // Auth
       AppStrings.login: 'تسجيل الدخول',

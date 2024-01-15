@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -9,10 +10,10 @@ enum Language { en, ar }
 
 String get getAppLanguageCode =>
     sl<SharedPreferences>().getString(SharedKey.language.name) ??
-    Get.deviceLocale?.languageCode  ??
+    Get.deviceLocale?.languageCode ??
     'en';
 
-void changeAppLanguage() {
+void changeAppLanguage(BuildContext context) {
   if (getAppLanguageCode == 'en') {
     Get.updateLocale(const Locale('ar'));
 
@@ -22,6 +23,7 @@ void changeAppLanguage() {
 
     sl<SharedPreferences>().setString(SharedKey.language.name, 'en');
   }
+  Phoenix.rebirth(context);
 }
 
 Future<void> firstTimeForLanguage() async {

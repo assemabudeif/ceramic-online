@@ -1,24 +1,7 @@
-import 'dart:developer';
-
-import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
-import '/core/utilities/routes_manger.dart';
-import '/features/order/presentation/views/orders_view.dart';
-import '/features/profile/presentation/views/profile_view.dart';
-import '/features/favorites/presentation/views/favorite_view.dart';
-import '../../../widgets/chat_with_support_widget.dart';
-import '../../../categories/presentation/views/categories_view.dart';
-import '/core/global/theme/app_colors_light.dart';
-import '/core/global/widgets/custom_app_bar.dart';
-import '/core/utilities/app_constance.dart';
-import '/core/utilities/assets_data.dart';
-import '/core/utilities/font_manger.dart';
+import 'package:ceramic_online/core/global/language/language_manger.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-
-import '/core/global/language/app_strings.dart';
-import 'home_view.dart';
+import 'home_layout_imports.dart';
 
 class HomeLayoutView extends StatefulWidget {
   const HomeLayoutView({super.key});
@@ -85,6 +68,22 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
           changeIndex(2);
         },
         actions: [
+          Visibility(
+            visible: _currentIndex == 4,
+            child: TextButton(
+              onPressed: () {
+                changeAppLanguage(context);
+              },
+              child: Text(
+                AppStrings.changeLanguage.tr,
+                style: context.textTheme.bodySmall!.copyWith(
+                  fontWeight: kFontWeightSemiBold,
+                  decoration: TextDecoration.underline,
+                  color: kPrimaryColor,
+                ),
+              ),
+            ),
+          ),
           Padding(
             padding: EdgeInsetsDirectional.only(end: kDefaultPadding.w),
             child: InkWell(
@@ -95,13 +94,15 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
                 children: [
                   SvgPicture.asset(
                     AssetsData.cartIconSVG,
+                    matchTextDirection: true,
+                    width: 23.w,
                   ),
                   PositionedDirectional(
                     top: 0,
                     end: 0,
                     child: Container(
-                      width: 15.w,
-                      height: 15.h,
+                      width: 10.w,
+                      height: 10.w,
                       decoration: BoxDecoration(
                         color: kPrimaryColor,
                         shape: BoxShape.circle,
@@ -112,6 +113,7 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
                           style: context.textTheme.bodySmall!.copyWith(
                             color: kWhiteColor,
                             fontWeight: kFontWeightSemiBold,
+                            fontSize: 7.sp,
                           ),
                         ),
                       ),
@@ -123,30 +125,49 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
           ),
         ],
       ),
-      body: ChatWithSupportWidget(
-        child: _screens[_currentIndex],
-      ),
-      floatingActionButton: FloatingActionButton(
-        mini: false,
-        shape: const CircleBorder(),
-        onPressed: () {
-          changeIndex(2);
+      body: PopScope(
+        canPop: false,
+        onPopInvoked: (didPop) {
+          if (_currentIndex != 2) {
+            changeIndex(2);
+          } else {
+            _showAlterDialog(context);
+          }
         },
-        backgroundColor: _currentIndex == 2 ? kPrimaryColor : kHintColor,
-        child: Padding(
-          padding: EdgeInsets.symmetric(vertical: 5.h),
-          child: Column(
-            children: [
-              const Icon(Icons.home_outlined),
-              Text(
-                AppStrings.home.tr,
-                style: context.textTheme.bodySmall!.copyWith(
-                  color: kWhiteColor,
-                  fontWeight: kFontWeightSemiBold,
-                  fontSize: 10.sp,
+        child: ChatWithSupportWidget(
+          child: _screens[_currentIndex],
+        ),
+      ),
+      floatingActionButton: SizedBox(
+        width: 50.w,
+        height: 50.w,
+        child: FloatingActionButton(
+          mini: false,
+          shape: const CircleBorder(),
+          onPressed: () {
+            changeIndex(2);
+          },
+          backgroundColor: _currentIndex == 2 ? kPrimaryColor : kHintColor,
+          child: Padding(
+            padding: EdgeInsets.symmetric(vertical: 5.h),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Icon(
+                  Icons.home_outlined,
+                  size: 20.sp,
                 ),
-              ),
-            ],
+                Text(
+                  AppStrings.home.tr,
+                  style: context.textTheme.bodySmall!.copyWith(
+                    color: kWhiteColor,
+                    fontWeight: kFontWeightBold,
+                    fontSize: getAppLanguageCode == 'en' ? 12.sp : 10.sp,
+                  ),
+                ),
+                const Spacer(),
+              ],
+            ),
           ),
         ),
       ),
@@ -185,6 +206,30 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
               ],
             );
           }),
+    );
+  }
+
+  void _showAlterDialog(BuildContext context) {
+    ArtSweetAlert.show(
+      context: context,
+      artDialogArgs: ArtDialogArgs(
+        type: ArtSweetAlertType.warning,
+        title: AppStrings.exit.tr,
+        text: AppStrings.areYouSureToExitApp.tr,
+        showCancelBtn: true,
+        confirmButtonText: AppStrings.exit.tr,
+        cancelButtonText: AppStrings.cancel.tr,
+        onCancel: () {
+          Get.back();
+        },
+        onConfirm: () {
+          if (Platform.isAndroid) {
+            SystemNavigator.pop();
+          } else {
+            exit(0);
+          }
+        },
+      ),
     );
   }
 }

@@ -104,8 +104,13 @@ class CartProductsListWidget extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(
+            width: 5.w,
+          ),
           SvgPicture.asset(
             AssetsData.productCeramicSVG,
+            width: 0.3.sw,
+            fit: BoxFit.fitWidth,
           ),
         ],
       ),

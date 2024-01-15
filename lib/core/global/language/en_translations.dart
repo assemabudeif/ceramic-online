@@ -5,6 +5,9 @@ Map<String, String> get enTranslations => {
       AppStrings.appName: 'Ceramic Online',
       AppStrings.invalidPageName: 'Invalid Page Name',
       AppStrings.changeLanguage: 'Change Language',
+      AppStrings.exit: 'Exit',
+      AppStrings.areYouSureToExitApp: 'Are you sure to exit the application?',
+      AppStrings.cancel: 'Cancel',
 
       // Auth
       AppStrings.login: 'Login',

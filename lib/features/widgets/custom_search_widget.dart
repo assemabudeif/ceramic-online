@@ -9,8 +9,8 @@ import 'package:get/get.dart';
 
 import '/core/utilities/assets_data.dart';
 
-class HomeSearchWidget extends StatelessWidget {
-  const HomeSearchWidget({
+class CustomSearchWidget extends StatelessWidget {
+  const CustomSearchWidget({
     super.key,
     this.hasFilter = false,
     this.onTapFilter,
@@ -58,10 +58,10 @@ class HomeSearchWidget extends StatelessWidget {
                     ),
                     margin: EdgeInsets.symmetric(
                       horizontal: 10.w,
-                      vertical: 7.5.h,
+                      vertical: 4.h,
                     ),
                     width: 70.w,
-                    height: 10.h,
+                    height: 15.h,
                     child: Row(
                       mainAxisSize: MainAxisSize.min,
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

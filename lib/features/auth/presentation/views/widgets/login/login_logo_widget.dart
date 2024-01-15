@@ -21,7 +21,7 @@ class LoginLogoWidget extends StatelessWidget {
       padding: EdgeInsets.only(top: 0.06.sh),
       child: SlideInDown(
         animate: true,
-        delay: const Duration(seconds: 2),
+        delay: const Duration(seconds: 1),
         child: SvgPicture.asset(
           AssetsData.logoSvg,
           fit: BoxFit.fitHeight,

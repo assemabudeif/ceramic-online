@@ -11,21 +11,29 @@ class HomeBannerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
-              items: [
-                SvgPicture.asset(AssetsData.bannerSVG),
-                SvgPicture.asset(AssetsData.bannerSVG),
-                SvgPicture.asset(AssetsData.bannerSVG),
-              ],
-              options: CarouselOptions(
-                height: 150.h,
-                viewportFraction: 1,
-                autoPlay: true,
-                autoPlayInterval: const Duration(seconds: 3),
-                autoPlayAnimationDuration: const Duration(milliseconds: 800),
-                autoPlayCurve: Curves.fastOutSlowIn,
-                pauseAutoPlayOnTouch: true,
-                enlargeCenterPage: true,
-              ),
-            );
+      items: [
+        SvgPicture.asset(
+          AssetsData.bannerSVG,
+          width: 1.sw,
+        ),
+        SvgPicture.asset(
+          AssetsData.bannerSVG,
+          width: 1.sw,
+        ),
+        SvgPicture.asset(
+          AssetsData.bannerSVG,
+          width: 1.sw,
+        ),
+      ],
+      options: CarouselOptions(
+        viewportFraction: 1,
+        autoPlay: true,
+        autoPlayInterval: const Duration(seconds: 3),
+        autoPlayAnimationDuration: const Duration(milliseconds: 800),
+        autoPlayCurve: Curves.fastOutSlowIn,
+        pauseAutoPlayOnTouch: true,
+        enlargeCenterPage: true,
+      ),
+    );
   }
 }

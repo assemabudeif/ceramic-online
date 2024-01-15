@@ -26,7 +26,8 @@ class AuthLoginWithGoogleWidget extends StatelessWidget {
         children: [
           Container(
             width: 1.sw,
-            height: 33.h,
+            // height: 33.h,
+            padding: EdgeInsets.symmetric(vertical: 1.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(50.r),
               color: kGoogleButtonColor,

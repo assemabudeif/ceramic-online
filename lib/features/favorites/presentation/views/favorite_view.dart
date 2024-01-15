@@ -1,6 +1,8 @@
 import 'dart:developer';
+import 'dart:ui';
 
 import 'package:animate_do/animate_do.dart';
+import 'package:ceramic_online/core/global/language/language_manger.dart';
 import 'package:ceramic_online/features/favorites/presentation/view_models/favorite_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '/core/global/language/app_strings.dart';
@@ -30,10 +32,30 @@ class _FavoriteViewState extends State<FavoriteView> {
 
   List<ProductModel> products = [];
   _changeHeartIconSizeWithAnimation(double progress) {
-    log('progress: $progress');
-
     setState(() {
-      heartIconSize = 45.w;
+      heartIconSize = 35.w;
+    });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        heartIconSize = 40.w;
+      });
+    });
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        heartIconSize = 45.w;
+      });
+    });
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        heartIconSize = 40.w;
+      });
+    });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        heartIconSize = 35.w;
+      });
     });
 
     Future.delayed(const Duration(milliseconds: 500), () {
@@ -47,8 +69,34 @@ class _FavoriteViewState extends State<FavoriteView> {
     double progress,
   ) {
     setState(() {
-      Future.delayed(const Duration(milliseconds: 500), () {
-        favoriteIconSize = 30.w + (progress * 15);
+      favoriteIconSize = 35.w;
+    });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        favoriteIconSize = 40.w;
+      });
+    });
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        favoriteIconSize = 45.w;
+      });
+    });
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        favoriteIconSize = 40.w;
+      });
+    });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        favoriteIconSize = 35.w;
+      });
+    });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        favoriteIconSize = 30.w;
       });
     });
   }
@@ -99,7 +147,7 @@ class _FavoriteViewState extends State<FavoriteView> {
               ),
             ],
           ),
-          SizedBox(height: 20.h),
+          SizedBox(height: 40.h),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: kDefaultPadding.w / 2),
             child: Stack(
@@ -124,38 +172,18 @@ class _FavoriteViewState extends State<FavoriteView> {
                           });
                         }
                       },
-                      onUpdate: (DismissibleTileUpdateDetails details) {
-                        details.direction ==
-                                DismissibleTileDirection.rightToLeft
-                            ? _changeHeartIconSizeWithAnimation(
-                                details.progress,
-                              )
-                            : _changeFavoriteIconSizeWithAnimation(
-                                details.progress,
-                              );
-
-                        // if (details.direction ==
-                        //     DismissibleTileDirection.rightToLeft) {
-                        //   _changeHeartIconSizeWithAnimation(
-                        //     details.progress,
-                        //   );
-                        // } else {
-                        //   _changeFavoriteIconSizeWithAnimation(
-                        //     details.progress,
-                        //   );
-                        // }
-                      },
                       ltrDismissedColor: kTransparentColor,
                       rtlDismissedColor: kTransparentColor,
                       rtlBackground: Container(
                         padding: EdgeInsetsDirectional.only(
                           end: kDefaultPadding.w,
                         ),
+                        height: 100.h,
                         alignment: AlignmentDirectional.center,
                         color: kTransparentColor,
                         child: Icon(
                           Icons.heart_broken,
-                          color: kHintColor,
+                          color: kDarkIconColor,
                           size: 100.r,
                         ),
                       ),
@@ -181,26 +209,58 @@ class _FavoriteViewState extends State<FavoriteView> {
             ),
           ),
           SizedBox(height: 50.h),
-          Container(
-            padding: EdgeInsets.symmetric(
-              horizontal: kDefaultPadding.w,
+
+          /// Icons In English language
+          Visibility(
+            visible: getAppLanguageCode == 'en',
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: kDefaultPadding.w,
+              ),
+              height: 0.1.sw,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(
+                    Icons.heart_broken,
+                    color: kHintColor,
+                    size: heartIconSize,
+                    // size: 30.w,
+                  ),
+                  Icon(
+                    Icons.favorite,
+                    color: kPrimaryColor,
+                    size: favoriteIconSize,
+                  ),
+                ],
+              ),
             ),
-            height: 0.1.sw,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(
-                  Icons.heart_broken,
-                  color: kHintColor,
-                  size: heartIconSize,
-                  // size: 30.w,
-                ),
-                Icon(
-                  Icons.favorite,
-                  color: kPrimaryColor,
-                  size: favoriteIconSize,
-                ),
-              ],
+          ),
+
+          /// Icons In Arabic language
+          Visibility(
+            visible: getAppLanguageCode == 'ar',
+            child: Container(
+              padding: EdgeInsets.symmetric(
+                horizontal: kDefaultPadding.w,
+              ),
+              height: 0.1.sw,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(
+                    Icons.favorite,
+                    color: kPrimaryColor,
+                    size: favoriteIconSize,
+                  ),
+                  Icon(
+                    Icons.heart_broken,
+                    color: kHintColor,
+                    size: heartIconSize,
+                    // size: 30.w,
+                  ),
+                ],
+              ),
             ),
           ),
           SizedBox(

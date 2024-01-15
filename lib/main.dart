@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_phoenix/flutter_phoenix.dart';
 
 import '/core/app.dart';
 import 'package:flutter/material.dart';
@@ -19,5 +20,5 @@ void main() async {
   await firstTimeForLanguage();
   Bloc.observer = AppBlocObserver();
 
-  runApp(const CeramicOnlineApp());
+  runApp(Phoenix(child: const CeramicOnlineApp()));
 }

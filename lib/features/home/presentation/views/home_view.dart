@@ -13,7 +13,7 @@ import 'widgets/home_banner_widget.dart';
 import 'widgets/home_best_sales_list_widget.dart';
 import 'widgets/home_header_widget.dart';
 import 'widgets/home_products_for_you_list_widget.dart';
-import 'widgets/home_search_widget.dart';
+import '../../../widgets/custom_search_widget.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -41,7 +41,7 @@ class HomeView extends StatelessWidget {
               //
               //* Search
               //
-              HomeSearchWidget(
+              CustomSearchWidget(
                 hintText: AppStrings.whatAreYouLookingFor.tr,
                 // hasFilter: true,
                 onTapFilter: () {},
@@ -62,6 +62,7 @@ class HomeView extends StatelessWidget {
                 onPressed: () {
                   HomeLayoutView.changeIndex(context: context, index: 1);
                 },
+                haveSeeAll: true,
               ),
               SizedBox(height: 10.h),
 

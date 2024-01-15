@@ -3,6 +3,9 @@ class AppStrings {
   static const String appName = 'appName';
   static const String invalidPageName = 'invalidPageName';
   static const String changeLanguage = 'changeLanguage';
+  static const String exit = 'exit';
+  static const String areYouSureToExitApp = 'areYouSureToExitApp';
+  static const String cancel = 'cancel';
 
   // Auth
   static const String login = 'login';

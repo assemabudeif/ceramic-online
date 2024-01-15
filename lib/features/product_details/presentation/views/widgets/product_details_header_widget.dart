@@ -51,6 +51,7 @@ class _ProductDetailsHeaderWidgetState
             fontWeight: kFontWeightBold,
           ),
         ),
+        SizedBox(height: 20.h),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

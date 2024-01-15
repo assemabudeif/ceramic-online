@@ -3,7 +3,7 @@ import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/app_constance.dart';
 import '/core/utilities/dummy.dart';
 import '/core/utilities/routes_manger.dart';
-import '/features/home/presentation/views/widgets/home_search_widget.dart';
+import '../../../widgets/custom_search_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -32,7 +32,7 @@ class CategoriesView extends StatelessWidget {
             ),
           ),
           const SizedBox(height: kDefaultPadding),
-          HomeSearchWidget(
+          CustomSearchWidget(
             hintText: AppStrings.search.tr,
             hasPadding: false,
           ),

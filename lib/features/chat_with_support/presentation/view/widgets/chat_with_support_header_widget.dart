@@ -18,16 +18,16 @@ class ChatWithSupportHeaderWidget extends StatelessWidget {
         Stack(
           children: [
             CircleAvatar(
-              radius: 25.r,
+              radius: 18.r,
               backgroundColor: kHintColor,
               child: SvgPicture.asset(AssetsData.supportIconSVG),
             ),
             PositionedDirectional(
-              bottom: 1.5.h,
-              end: 1.5.w,
+              bottom: 0,
+              end: 1.w,
               child: Container(
-                width: 12.5.w,
-                height: 12.5.w,
+                width: 10.r,
+                height: 10.r,
                 decoration: const BoxDecoration(
                   color: kOnlineColor,
                   shape: BoxShape.circle,
@@ -42,8 +42,9 @@ class ChatWithSupportHeaderWidget extends StatelessWidget {
           children: [
             Text(
               AppStrings.support.tr,
-              style: context.textTheme.titleMedium!.copyWith(
+              style: context.textTheme.titleSmall!.copyWith(
                 color: kTextDarkColor,
+                fontWeight: kFontWeightBold,
                 height: 1.2,
               ),
             ),
@@ -51,7 +52,7 @@ class ChatWithSupportHeaderWidget extends StatelessWidget {
               AppStrings.online.tr,
               style: context.textTheme.bodySmall!.copyWith(
                 color: kTextDarkColor,
-                fontWeight: kFontWeightBold,
+                fontWeight: kFontWeightSemiBold,
                 height: 1.0,
               ),
             ),
