@@ -1,11 +1,13 @@
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/app_constance.dart';
-import '/core/utilities/font_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
+
+import 'support_message_widget.dart';
+import 'user_message_widget.dart';
 
 class ChatWithSupportViewBody extends StatefulWidget {
   const ChatWithSupportViewBody({super.key});
@@ -35,8 +37,8 @@ class _ChatWithSupportViewBodyState extends State<ChatWithSupportViewBody> {
                 return SizedBox(
                   width: 0.7.sw,
                   child: index.isEven
-                      ? _buildSupportMessageWidget()
-                      : _buildUserMessageWidget(),
+                      ? const SupportMessageWidget()
+                      : const UserMessageWidget(),
                 );
               },
               separatorBuilder: (context, index) {
@@ -78,112 +80,6 @@ class _ChatWithSupportViewBodyState extends State<ChatWithSupportViewBody> {
           ),
           SizedBox(height: kDefaultPadding.h),
         ],
-      ),
-    );
-  }
-
-  _buildSupportMessageWidget() {
-    return Align(
-      alignment: AlignmentDirectional.centerStart,
-      child: SizedBox(
-        width: 0.75.sw,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Stack(
-              children: [
-                CircleAvatar(
-                  radius: 20.r,
-                  backgroundColor: kWhiteColor,
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      FontAwesomeIcons.user,
-                      color: kTextDarkColor,
-                    ),
-                  ),
-                ),
-                PositionedDirectional(
-                  bottom: 1.h,
-                  end: 1.w,
-                  child: Container(
-                    width: 10.w,
-                    height: 10.5.w,
-                    decoration: const BoxDecoration(
-                      color: kOnlineColor,
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(width: kDefaultPadding.w / 2),
-            Expanded(
-              child: Column(
-                children: [
-                  Text(
-                    'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter ',
-                    style: context.textTheme.bodySmall!.copyWith(
-                      color: kTextDarkColor,
-                      fontWeight: kFontWeightBold,
-                    ),
-                    maxLines: 100,
-                  ),
-                  SizedBox(height: 1.5.h),
-                  Align(
-                    alignment: AlignmentDirectional.centerStart,
-                    child: Text(
-                      '01:15',
-                      style: context.textTheme.bodySmall!.copyWith(
-                        color: kTextDarkColor,
-                        fontWeight: kFontWeightLight,
-                        fontSize: 10.sp,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  _buildUserMessageWidget() {
-    return Align(
-      alignment: AlignmentDirectional.centerEnd,
-      child: Container(
-        color: kTextFieldFillColor,
-        padding: EdgeInsets.symmetric(
-          horizontal: kDefaultPadding.w / 2,
-          vertical: kDefaultPadding.h / 2,
-        ),
-        width: 0.75.sw,
-        child: Column(
-          children: [
-            Text(
-              'Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter ',
-              style: context.textTheme.bodySmall!.copyWith(
-                color: kTextDarkColor,
-                fontWeight: kFontWeightBold,
-              ),
-              maxLines: 100,
-            ),
-            SizedBox(height: 1.5.h),
-            Align(
-              alignment: AlignmentDirectional.centerEnd,
-              child: Text(
-                '01:15',
-                style: context.textTheme.bodySmall!.copyWith(
-                  color: kTextDarkColor,
-                  fontWeight: kFontWeightLight,
-                  fontSize: 10.sp,
-                ),
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }

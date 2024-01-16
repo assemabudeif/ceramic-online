@@ -1,4 +1,6 @@
-import '/core/global/language/language_manger.dart';
+import 'package:flutter_dismissible_tile/flutter_dismissible_tile.dart';
+import 'package:rive/rive.dart';
+
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/app_constance.dart';
@@ -6,11 +8,12 @@ import '/core/utilities/assets_data.dart';
 import '/core/utilities/dummy.dart';
 import '/features/widgets/single_product_item_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dismissible_tile/flutter_dismissible_tile.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:rive/rive.dart';
+
+import 'widgets/favorite_dismissible_items_widget.dart';
+import 'widgets/favorite_icons_widget.dart';
 
 class FavoriteView extends StatefulWidget {
   const FavoriteView({super.key});
@@ -20,80 +23,10 @@ class FavoriteView extends StatefulWidget {
 }
 
 class _FavoriteViewState extends State<FavoriteView> {
-  double favoriteIconSize = 30.w;
+  double _favoriteIconSize = 30.w;
 
-  double heartIconSize = 30.w;
-
-  List<ProductModel> products = [];
-  _changeHeartIconSizeWithAnimation(double progress) {
-    setState(() {
-      heartIconSize = 35.w;
-    });
-
-    Future.delayed(const Duration(milliseconds: 500), () {
-      setState(() {
-        heartIconSize = 40.w;
-      });
-    });
-    Future.delayed(const Duration(milliseconds: 500), () {
-      setState(() {
-        heartIconSize = 45.w;
-      });
-    });
-    Future.delayed(const Duration(milliseconds: 500), () {
-      setState(() {
-        heartIconSize = 40.w;
-      });
-    });
-
-    Future.delayed(const Duration(milliseconds: 500), () {
-      setState(() {
-        heartIconSize = 35.w;
-      });
-    });
-
-    Future.delayed(const Duration(milliseconds: 500), () {
-      setState(() {
-        heartIconSize = 30.w;
-      });
-    });
-  }
-
-  _changeFavoriteIconSizeWithAnimation(
-    double progress,
-  ) {
-    setState(() {
-      favoriteIconSize = 35.w;
-    });
-
-    Future.delayed(const Duration(milliseconds: 500), () {
-      setState(() {
-        favoriteIconSize = 40.w;
-      });
-    });
-    Future.delayed(const Duration(milliseconds: 500), () {
-      setState(() {
-        favoriteIconSize = 45.w;
-      });
-    });
-    Future.delayed(const Duration(milliseconds: 500), () {
-      setState(() {
-        favoriteIconSize = 40.w;
-      });
-    });
-
-    Future.delayed(const Duration(milliseconds: 500), () {
-      setState(() {
-        favoriteIconSize = 35.w;
-      });
-    });
-
-    Future.delayed(const Duration(milliseconds: 500), () {
-      setState(() {
-        favoriteIconSize = 30.w;
-      });
-    });
-  }
+  double _heartIconSize = 30.w;
+  List<ProductModel> kFavoriteProducts = [];
 
   @override
   Widget build(BuildContext context) {
@@ -142,6 +75,9 @@ class _FavoriteViewState extends State<FavoriteView> {
             ],
           ),
           SizedBox(height: 40.h),
+
+          /// Dismissible Items to add to favorite list
+          /// Dismissible Items to add to favorite list
           Padding(
             padding: EdgeInsets.symmetric(horizontal: kDefaultPadding.w / 2),
             child: Stack(
@@ -157,12 +93,12 @@ class _FavoriteViewState extends State<FavoriteView> {
                       onDismissed: (direction) {
                         if (direction == DismissibleTileDirection.leftToRight) {
                           setState(() {
-                            products.add(kDummyProducts[i]);
-                            _changeFavoriteIconSizeWithAnimation(0);
+                            kFavoriteProducts.add(kDummyProducts[i]);
+                            _changeFavoriteIconSizeWithAnimation();
                           });
                         } else {
                           setState(() {
-                            _changeHeartIconSizeWithAnimation(0);
+                            _changeHeartIconSizeWithAnimation();
                           });
                         }
                       },
@@ -204,59 +140,13 @@ class _FavoriteViewState extends State<FavoriteView> {
           ),
           SizedBox(height: 50.h),
 
-          /// Icons In English language
-          Visibility(
-            visible: getAppLanguageCode == 'en',
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: kDefaultPadding.w,
-              ),
-              height: 0.1.sw,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Icon(
-                    Icons.heart_broken,
-                    color: kHintColor,
-                    size: heartIconSize,
-                    // size: 30.w,
-                  ),
-                  Icon(
-                    Icons.favorite,
-                    color: kPrimaryColor,
-                    size: favoriteIconSize,
-                  ),
-                ],
-              ),
-            ),
+          /// Icons Favorite and Heart
+          FavoriteIconsWidget(
+            favoriteIconSize: _favoriteIconSize,
+            heartIconSize: _heartIconSize,
           ),
 
-          /// Icons In Arabic language
-          Visibility(
-            visible: getAppLanguageCode == 'ar',
-            child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: kDefaultPadding.w,
-              ),
-              height: 0.1.sw,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Icon(
-                    Icons.favorite,
-                    color: kPrimaryColor,
-                    size: favoriteIconSize,
-                  ),
-                  Icon(
-                    Icons.heart_broken,
-                    color: kHintColor,
-                    size: heartIconSize,
-                    // size: 30.w,
-                  ),
-                ],
-              ),
-            ),
-          ),
+          /// Hand Animation
           SizedBox(
             width: 0.5.sw,
             height: 0.15.sw,
@@ -278,7 +168,7 @@ class _FavoriteViewState extends State<FavoriteView> {
 
           /// Show this widget if user have favorite products
           Visibility(
-            visible: products.isNotEmpty,
+            visible: kFavoriteProducts.isNotEmpty,
             child: Column(
               children: [
                 Text(
@@ -288,7 +178,7 @@ class _FavoriteViewState extends State<FavoriteView> {
                 SizedBox(height: 10.h),
                 ListView.separated(
                   shrinkWrap: true,
-                  itemCount: products.length,
+                  itemCount: kFavoriteProducts.length,
                   physics: const NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
                     return const SingleProductItemWidget(
@@ -305,5 +195,73 @@ class _FavoriteViewState extends State<FavoriteView> {
         ],
       ),
     );
+  }
+
+  _changeHeartIconSizeWithAnimation() {
+    setState(() {
+      _heartIconSize = 35.w;
+    });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _heartIconSize = 40.w;
+      });
+    });
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _heartIconSize = 45.w;
+      });
+    });
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _heartIconSize = 40.w;
+      });
+    });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _heartIconSize = 35.w;
+      });
+    });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _heartIconSize = 30.w;
+      });
+    });
+  }
+
+  _changeFavoriteIconSizeWithAnimation() {
+    setState(() {
+      _favoriteIconSize = 35.w;
+    });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _favoriteIconSize = 40.w;
+      });
+    });
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _favoriteIconSize = 45.w;
+      });
+    });
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _favoriteIconSize = 40.w;
+      });
+    });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _favoriteIconSize = 35.w;
+      });
+    });
+
+    Future.delayed(const Duration(milliseconds: 500), () {
+      setState(() {
+        _favoriteIconSize = 30.w;
+      });
+    });
   }
 }
