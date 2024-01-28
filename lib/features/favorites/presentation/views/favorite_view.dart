@@ -12,7 +12,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import 'widgets/favorite_dismissible_items_widget.dart';
+// import 'widgets/favorite_dismissible_items_widget.dart';
 import 'widgets/favorite_icons_widget.dart';
 
 class FavoriteView extends StatefulWidget {

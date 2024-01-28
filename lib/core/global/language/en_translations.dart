@@ -8,6 +8,7 @@ Map<String, String> get enTranslations => {
       AppStrings.exit: 'Exit',
       AppStrings.areYouSureToExitApp: 'Are you sure to exit the application?',
       AppStrings.cancel: 'Cancel',
+      AppStrings.notifications: 'Notifications',
 
       // Auth
       AppStrings.login: 'Login',

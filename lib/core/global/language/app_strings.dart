@@ -6,6 +6,7 @@ class AppStrings {
   static const String exit = 'exit';
   static const String areYouSureToExitApp = 'areYouSureToExitApp';
   static const String cancel = 'cancel';
+  static const String notifications = 'notifications';
 
   // Auth
   static const String login = 'login';

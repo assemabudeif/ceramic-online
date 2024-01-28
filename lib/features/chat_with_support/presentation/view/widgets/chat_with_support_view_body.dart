@@ -58,9 +58,15 @@ class _ChatWithSupportViewBodyState extends State<ChatWithSupportViewBody> {
                 hintStyle: context.textTheme.bodyMedium!.copyWith(
                   color: kHintColor,
                 ),
-                suffixIcon: IconButton(
-                  onPressed: () {},
-                  icon: const Icon(FontAwesomeIcons.paperPlane),
+                suffixIcon: Padding(
+                  padding: EdgeInsetsDirectional.only(end: 15.w),
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      FontAwesomeIcons.paperPlane,
+                      size: 18.sp,
+                    ),
+                  ),
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10.r),

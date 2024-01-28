@@ -18,9 +18,13 @@ class ChatWithSupportHeaderWidget extends StatelessWidget {
         Stack(
           children: [
             CircleAvatar(
-              radius: 18.r,
+              radius: 14.w,
               backgroundColor: kHintColor,
-              child: SvgPicture.asset(AssetsData.supportIconSVG),
+              child: SvgPicture.asset(
+                AssetsData.supportIconSVG,
+                matchTextDirection: true,
+                width: 18.w,
+              ),
             ),
             PositionedDirectional(
               bottom: 0,
@@ -39,6 +43,7 @@ class ChatWithSupportHeaderWidget extends StatelessWidget {
         SizedBox(width: kDefaultPadding.w / 2),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               AppStrings.support.tr,

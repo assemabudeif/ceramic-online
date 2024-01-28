@@ -49,6 +49,7 @@ class LocationViewBody extends StatelessWidget {
                     child: Icon(
                       Icons.my_location_outlined,
                       color: kPrimaryColor,
+                      size: 20.w,
                     ),
                   ),
                   SizedBox(width: 3.w),
@@ -121,7 +122,10 @@ class LocationViewBody extends StatelessWidget {
                       onPressed: () {
                         Get.toNamed(Routes.locationDetailsPath);
                       },
-                      icon: const Icon(Icons.arrow_forward_ios),
+                      icon: Icon(
+                        Icons.arrow_forward_ios,
+                        size: 15.w,
+                      ),
                     ),
                   ],
                 );
@@ -173,7 +177,10 @@ class LocationViewBody extends StatelessWidget {
                         onPressed: () {
                           Get.toNamed(Routes.locationDetailsPath);
                         },
-                        icon: const Icon(Icons.arrow_forward_ios),
+                        icon: Icon(
+                          Icons.arrow_forward_ios,
+                          size: 15.w,
+                        ),
                       ),
                     ],
                   ),

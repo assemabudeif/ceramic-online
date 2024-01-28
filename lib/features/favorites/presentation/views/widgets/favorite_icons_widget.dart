@@ -1,6 +1,6 @@
-import 'package:ceramic_online/core/global/language/language_manger.dart';
-import 'package:ceramic_online/core/global/theme/app_colors_light.dart';
-import 'package:ceramic_online/core/utilities/app_constance.dart';
+import '/core/global/language/language_manger.dart';
+import '/core/global/theme/app_colors_light.dart';
+import '/core/utilities/app_constance.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

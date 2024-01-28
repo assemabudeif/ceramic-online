@@ -1,5 +1,7 @@
 import 'dart:developer';
 
+import '/features/notifications/presentation/views/notification_view.dart';
+
 import '/features/cart/presentation/views/checkout_view.dart';
 
 import '/features/cart/presentation/views/cart_view.dart';
@@ -32,6 +34,7 @@ class Routes {
   static const String splashPath = '/';
   static const String homePath = '/home';
   static const String homeLayoutPath = '/homeLayout';
+  static const String notificationsPath = '/notifications';
 
   // Auth Routes
   static const String loginPath = '/login';
@@ -74,6 +77,10 @@ List<GetPage<dynamic>> get appRoutes => [
       GetPage(
         name: Routes.homeLayoutPath,
         page: () => const HomeLayoutView(),
+      ),
+      GetPage(
+        name: Routes.notificationsPath,
+        page: () => const NotificationView(),
       ),
 
       // Auth Screens

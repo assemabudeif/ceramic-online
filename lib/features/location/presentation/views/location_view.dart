@@ -1,6 +1,8 @@
+import '/core/global/widgets/custom_app_bar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
-import '/core/utilities/font_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,19 +14,13 @@ class LocationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          AppStrings.locations.tr,
-          style: context.textTheme.titleMedium!.copyWith(
-            color: kPrimaryColor,
-            fontWeight: kFontWeightSemiBold,
-          ),
-        ),
-        titleSpacing: 0,
+      appBar: CustomAppBar(
+        title: AppStrings.locations.tr,
         leading: IconButton(
-          icon: const Icon(
+          icon: Icon(
             Icons.close,
             color: kDarkIconColor,
+            size: 15.w,
           ),
           onPressed: () => Get.back(),
         ),

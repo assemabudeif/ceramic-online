@@ -1,3 +1,5 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import '/core/utilities/font_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,33 +24,49 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppBar(
-      title: titleWidget ??
-          Text(
-            title ?? '',
-            style: context.textTheme.titleMedium!.copyWith(
-              color: context.theme.primaryColor,
-              fontWeight: kFontWeightSemiBold,
-            ),
+    return PreferredSize(
+      preferredSize: preferredSize,
+      child: SafeArea(
+        child: Container(
+          alignment: Alignment.center,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              if (haveBackIcon)
+                leading ??
+                    IconButton(
+                      onPressed: () {
+                        if (onBack != null) {
+                          onBack!();
+                        } else {
+                          Get.back();
+                        }
+                      },
+                      icon: Icon(
+                        Icons.arrow_back_ios_new,
+                        size: 18.w,
+                      ),
+                    ),
+              SizedBox(width: 10.w),
+              titleWidget ??
+                  Text(
+                    title ?? '',
+                    style: context.textTheme.titleMedium!.copyWith(
+                      color: context.theme.primaryColor,
+                      fontWeight: kFontWeightSemiBold,
+                      fontSize: 16.sp,
+                    ),
+                  ),
+              const Spacer(),
+              if (actions != null) ...actions!,
+            ],
           ),
-      titleSpacing: 0,
-      leading: haveBackIcon
-          ? leading ??
-              IconButton(
-                onPressed: () {
-                  if (onBack != null) {
-                    onBack!();
-                  } else {
-                    Get.back();
-                  }
-                },
-                icon: const Icon(Icons.arrow_back_ios_new),
-              )
-          : null,
-      actions: actions,
+        ),
+      ),
     );
   }
 
   @override
-  Size get preferredSize => const Size.fromHeight(56.0);
+  Size get preferredSize => Size.fromHeight(0.055.sh);
 }

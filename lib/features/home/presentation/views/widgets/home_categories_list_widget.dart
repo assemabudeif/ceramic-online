@@ -6,6 +6,7 @@ import '/core/global/theme/app_colors_light.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+
 class HomeCategoriesListWidget extends StatefulWidget {
   const HomeCategoriesListWidget({super.key});
 
@@ -42,6 +43,8 @@ class _HomeCategoriesListWidgetState extends State<HomeCategoriesListWidget> {
                   child: Center(
                     child: SvgPicture.asset(
                       kDummyCategories[index].image,
+                      alignment: AlignmentDirectional.center,
+                      width: 23.w,
                     ),
                   ),
                 ),

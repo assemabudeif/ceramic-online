@@ -35,12 +35,15 @@ class HomeHeaderWidget extends StatelessWidget {
               Icon(
                 Icons.keyboard_arrow_down,
                 color: kTextDarkColor,
+                size: 18.w,
               ),
             ],
           ),
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Get.toNamed(Routes.notificationsPath);
+          },
           child: SvgPicture.asset(
             AssetsData.notificationIconSVG,
             height: 14.sp,

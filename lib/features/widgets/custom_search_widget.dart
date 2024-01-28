@@ -42,6 +42,8 @@ class CustomSearchWidget extends StatelessWidget {
             height: 20.h,
             child: SvgPicture.asset(
               AssetsData.searchIconSVG,
+              alignment: AlignmentDirectional.center,
+              width: 20.w,
             ),
           ),
           suffixIcon: hasFilter
@@ -58,7 +60,6 @@ class CustomSearchWidget extends StatelessWidget {
                     ),
                     margin: EdgeInsets.symmetric(
                       horizontal: 10.w,
-                      vertical: 4.h,
                     ),
                     width: 70.w,
                     height: 15.h,

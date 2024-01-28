@@ -84,6 +84,7 @@ class _HomeProductsForYouListWidgetState
                         icon: Icon(
                           Icons.favorite,
                           color: kPrimaryColor,
+                          size: 20.w,
                         ),
                       ),
                     ],
@@ -91,20 +92,21 @@ class _HomeProductsForYouListWidgetState
                   // SizedBox(height: 5.h),
                   Row(
                     children: [
-                      MaterialButton(
-                        onPressed: () {
-                          showAddToCartDialog(
-                            isInHome: true,
-                          );
-                        },
-                        color: kPrimaryColor,
-                        minWidth: 0.09.sw,
-                        height: 0.04.sh,
-                        child: Text(
-                          AppStrings.addToCart.tr,
-                          style: context.textTheme.bodySmall!.copyWith(
-                            color: kWhiteColor,
-                            fontWeight: kFontWeightSemiBold,
+                      Expanded(
+                        child: MaterialButton(
+                          onPressed: () {
+                            showAddToCartDialog(
+                              isInHome: true,
+                            );
+                          },
+                          color: kPrimaryColor,
+                          height: 0.04.sh,
+                          child: Text(
+                            AppStrings.addToCart.tr,
+                            style: context.textTheme.bodySmall!.copyWith(
+                              color: kWhiteColor,
+                              fontWeight: kFontWeightSemiBold,
+                            ),
                           ),
                         ),
                       ),
@@ -113,56 +115,70 @@ class _HomeProductsForYouListWidgetState
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            InkWell(
-                              onTap: () {
-                                if (kDummyProducts[index].quantity > 1) {
-                                  setState(() {
-                                    kDummyProducts[index].quantity--;
-                                  });
-                                }
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: kPrimaryColor,
-                                  borderRadius: BorderRadius.circular(5.r),
-                                ),
-                                width: 0.09.sw,
-                                padding: EdgeInsets.all(5.r),
-                                alignment: Alignment.center,
-                                child: Text(
-                                  '-',
-                                  style: context.textTheme.bodyMedium!.copyWith(
-                                    color: kWhiteColor,
-                                    fontWeight: kFontWeightBlack,
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {
+                                  if (kDummyProducts[index].quantity > 1) {
+                                    setState(() {
+                                      kDummyProducts[index].quantity--;
+                                    });
+                                  }
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: kPrimaryColor,
+                                    borderRadius: BorderRadius.circular(5.r),
+                                  ),
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 4.w,
+                                    vertical: 2.h,
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    '-',
+                                    style:
+                                        context.textTheme.bodyMedium!.copyWith(
+                                      color: kWhiteColor,
+                                      fontWeight: kFontWeightBlack,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
-                            Text(
-                              '${kDummyProducts[index].quantity}',
-                              style: context.textTheme.bodyMedium!.copyWith(
-                                fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Text(
+                                '${kDummyProducts[index].quantity}',
+                                style: context.textTheme.bodyMedium!.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                textAlign: TextAlign.center,
                               ),
                             ),
-                            InkWell(
-                              onTap: () {
-                                setState(() {
-                                  kDummyProducts[index].quantity++;
-                                });
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: kPrimaryColor,
-                                  borderRadius: BorderRadius.circular(5.r),
-                                ),
-                                width: 0.09.sw,
-                                padding: EdgeInsets.all(5.r),
-                                alignment: Alignment.center,
-                                child: Text(
-                                  '+',
-                                  style: context.textTheme.bodyMedium!.copyWith(
-                                    color: kWhiteColor,
-                                    fontWeight: kFontWeightBlack,
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    kDummyProducts[index].quantity++;
+                                  });
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    color: kPrimaryColor,
+                                    borderRadius: BorderRadius.circular(5.r),
+                                  ),
+                                  // width: 0.09.sw,
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 4.w,
+                                    vertical: 2.h,
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: Text(
+                                    '+',
+                                    style:
+                                        context.textTheme.bodyMedium!.copyWith(
+                                      color: kWhiteColor,
+                                      fontWeight: kFontWeightBlack,
+                                    ),
                                   ),
                                 ),
                               ),

@@ -1,3 +1,7 @@
+import 'dart:developer';
+
+import 'package:google_sign_in/google_sign_in.dart';
+
 import '/features/auth/presentation/views/widgets/auth_text_form_field.dart';
 
 import '/core/utilities/routes_manger.dart';
@@ -77,7 +81,7 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
         ),
       ),
       width: 1.sw,
-      height: 0.65.sh,
+      height: 0.6.sh,
       child: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -181,7 +185,9 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
               AuthLoginWithGoogleWidget(
                 formKey: _formKey,
                 onPressed: () {
-                  Get.toNamed(Routes.phoneSignPath);
+                  _signInByGoogle();
+                  // GoogleSignIn.
+                  // Get.toNamed(Routes.phoneSignPath);
                 },
               ),
               SizedBox(height: 15.h),
@@ -190,5 +196,37 @@ class _LoginFormWidgetState extends State<LoginFormWidget> {
         ),
       ),
     );
+  }
+
+  _signInByGoogle() async {
+    ///https://www.googleapis.com/auth/userinfo.email	See your primary Google Account email address
+    // https://www.googleapis.com/auth/userinfo.profile	See your personal info, including any personal info you've made publicly available
+    // openid
+
+    const List<String> scopes = <String>[
+      'email',
+      // 'https://www.googleapis.com/auth/contacts.readonly',
+      'https://www.googleapis.com/auth/userinfo.email', //	See your primary Google Account email address
+      'https://www.googleapis.com/auth/userinfo.profile', //See your personal info, including any personal info you've made publicly available
+      'openid',
+    ];
+
+    GoogleSignIn googleSignIn = GoogleSignIn(
+      // Optional clientId
+      // clientId: 'your-client_id.apps.googleusercontent.com',
+      scopes: scopes,
+    );
+    try {
+      final result = await googleSignIn.signIn();
+      log(result?.id.toString() ?? '');
+      log(result?.email.toString() ?? '');
+      log(result?.displayName.toString() ?? '');
+      log(result?.photoUrl.toString() ?? '');
+      if (result != null) {
+        Get.offAllNamed(Routes.homeLayoutPath);
+      }
+    } catch (error) {
+      log(error.toString());
+    }
   }
 }

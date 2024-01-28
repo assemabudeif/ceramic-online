@@ -48,54 +48,70 @@ class CartProductsListWidget extends StatelessWidget {
                                   ),
                         ),
                       ),
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            if (kDummyProducts[0].quantity > 1) {
-                              kDummyProducts[0].quantity--;
-                            }
-                          });
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
-                            vertical: 5.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary,
-                            borderRadius: BorderRadius.circular(5.r),
-                          ),
-                          child: const Icon(
-                            Icons.remove,
-                            color: kWhiteColor,
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 10.w),
-                      Text(
-                        kDummyProducts[0].quantity.toString(),
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      ),
-                      SizedBox(width: 10.w),
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            kDummyProducts[0].quantity++;
-                          });
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 10.w,
-                            vertical: 5.h,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primary,
-                            borderRadius: BorderRadius.circular(5.r),
-                          ),
-                          child: const Icon(
-                            Icons.add,
-                            color: kWhiteColor,
-                          ),
+                      SizedBox(
+                        width: 0.25.sw,
+                        child: Row(
+                          children: [
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    if (kDummyProducts[0].quantity > 1) {
+                                      kDummyProducts[0].quantity--;
+                                    }
+                                  });
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 5.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                    borderRadius: BorderRadius.circular(5.r),
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: Icon(
+                                    Icons.remove,
+                                    color: kWhiteColor,
+                                    size: 18.w,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Text(
+                                kDummyProducts[0].quantity.toString(),
+                                style: Theme.of(context).textTheme.bodyMedium,
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                            Expanded(
+                              child: InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    kDummyProducts[0].quantity++;
+                                  });
+                                },
+                                child: Container(
+                                  padding: EdgeInsets.symmetric(
+                                    vertical: 5.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                    borderRadius: BorderRadius.circular(5.r),
+                                  ),
+                                  alignment: Alignment.center,
+                                  child: Icon(
+                                    Icons.add,
+                                    color: kWhiteColor,
+                                    size: 18.w,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],

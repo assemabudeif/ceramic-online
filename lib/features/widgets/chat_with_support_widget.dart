@@ -37,7 +37,11 @@ class ChatWithSupportWidget extends StatelessWidget {
                 top: 5.h,
                 bottom: 5.h,
               ),
-              child: SvgPicture.asset(AssetsData.supportIconSVG),
+              child: SvgPicture.asset(
+                AssetsData.supportIconSVG,
+                matchTextDirection: true,
+                width: 23.w,
+              ),
             ),
           ),
         ),

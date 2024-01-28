@@ -11,7 +11,7 @@ class AuthLoginWithAppleWidget extends StatelessWidget {
     required this.formKey,
     required this.onPressed,
   });
-  final GlobalKey<FormState> formKey ;
+  final GlobalKey<FormState> formKey;
   final Function onPressed;
 
   @override
@@ -32,7 +32,10 @@ class AuthLoginWithAppleWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.apple),
+            Icon(
+              Icons.apple,
+              size: 20.w,
+            ),
             SizedBox(width: 5.w),
             Text(
               AppStrings.continueWithApple.tr,

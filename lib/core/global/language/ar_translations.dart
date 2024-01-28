@@ -8,6 +8,7 @@ Map<String, String> get arTranslations => {
       AppStrings.exit: 'الخروج',
       AppStrings.areYouSureToExitApp: 'هل أنت متأكد من الخروج من التطبيق؟',
       AppStrings.cancel: 'إلغاء',
+      AppStrings.notifications: 'الإشعارات',
 
       // Auth
       AppStrings.login: 'تسجيل الدخول',

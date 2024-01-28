@@ -1,3 +1,5 @@
+import '/features/widgets/custom_cart_icon_widget.dart';
+
 import '/core/global/language/language_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -84,45 +86,7 @@ class _HomeLayoutViewState extends State<HomeLayoutView> {
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsetsDirectional.only(end: kDefaultPadding.w),
-            child: InkWell(
-              onTap: () {
-                Get.toNamed(Routes.cartPath);
-              },
-              child: Stack(
-                children: [
-                  SvgPicture.asset(
-                    AssetsData.cartIconSVG,
-                    matchTextDirection: true,
-                    width: 23.w,
-                  ),
-                  PositionedDirectional(
-                    top: 0,
-                    end: 0,
-                    child: Container(
-                      width: 10.w,
-                      height: 10.w,
-                      decoration: BoxDecoration(
-                        color: kPrimaryColor,
-                        shape: BoxShape.circle,
-                      ),
-                      child: Center(
-                        child: Text(
-                          '1',
-                          style: context.textTheme.bodySmall!.copyWith(
-                            color: kWhiteColor,
-                            fontWeight: kFontWeightSemiBold,
-                            fontSize: 7.sp,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          const CustomCartIconWidget(),
         ],
       ),
       body: PopScope(
