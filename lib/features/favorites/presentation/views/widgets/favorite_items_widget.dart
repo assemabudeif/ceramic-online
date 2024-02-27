@@ -72,7 +72,7 @@ class _FavoriteItemsWidgetState extends State<FavoriteItemsWidget> {
                     child: Icon(
                       Icons.delete,
                       color: kErrorColor,
-                      size: 100.r,
+                      size: 50.r,
                     ),
                   ),
                   ltrBackground: Container(
@@ -84,7 +84,7 @@ class _FavoriteItemsWidgetState extends State<FavoriteItemsWidget> {
                     child: Icon(
                       Icons.delete,
                       color: kErrorColor,
-                      size: 100.r,
+                      size: 50.r,
                     ),
                   ),
                   onDismissed: (direction) {

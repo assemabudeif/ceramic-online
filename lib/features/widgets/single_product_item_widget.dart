@@ -7,7 +7,6 @@ import '/core/data/models/product_data_model.dart';
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/app_constance.dart';
 import '/core/utilities/routes_manger.dart';
-import '/features/favorites/presentation/view_models/favorite_cubit.dart';
 
 class SingleProductItemWidget extends StatelessWidget {
   const SingleProductItemWidget({
