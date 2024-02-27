@@ -1,10 +1,11 @@
-import '/core/global/language/app_strings.dart';
-import '/core/global/theme/app_colors_light.dart';
-import '/core/utilities/font_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import '/core/global/language/app_strings.dart';
+import '/core/global/theme/app_colors_light.dart';
+import '/core/utilities/font_manger.dart';
 
 class CustomQrCodeTitleWidget extends StatelessWidget {
   const CustomQrCodeTitleWidget({super.key, required this.code});

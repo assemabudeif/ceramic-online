@@ -23,9 +23,7 @@ class AuthSignUpTermsAndPolicyWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return CheckboxListTile.adaptive(
       value: value,
-      onChanged: (value) {
-        onChanged!(value);
-      },
+      onChanged: onChanged,
       dense: true,
       controlAffinity: ListTileControlAffinity.leading,
       contentPadding: EdgeInsets.zero,

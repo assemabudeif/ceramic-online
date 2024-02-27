@@ -26,5 +26,6 @@
         "لديك",
         "متطابقة",
         "نسيت"
-    ]
+    ],
+    "notebook.formatOnSave.enabled": true
 }

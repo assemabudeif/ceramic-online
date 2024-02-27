@@ -1,13 +1,14 @@
-import '/core/services/services_locator.dart';
-import '/core/services/shared_key.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:developer';
 
-import '/core/utilities/routes_manger.dart';
-import '/core/utilities/app_constance.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
+import '/core/network/api_constance.dart';
+import '/core/services/app_prefs.dart';
+import '/core/services/services_locator.dart';
+import '/core/utilities/app_constance.dart';
+import '/core/utilities/routes_manger.dart';
 import 'sliding_logo.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -27,9 +28,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
     _initAnimationControllers();
 
-    _navigateToNext();
-
     _initAppPrefs();
+
+    _navigateToNext();
   }
 
   @override
@@ -41,15 +42,17 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void _navigateToNext() {
     Future.delayed(kSplashDuration, () {
-      Get.offAndToNamed(Routes.loginPath);
+      final String nextScreen =
+          ApiConstance.token.isEmpty ? Routes.loginPath : Routes.homeLayoutPath;
+      Get.offAndToNamed(nextScreen);
     });
   }
 
-  _initAppPrefs() {
-    kAppLanguage = sl<SharedPreferences>().getString(
-          SharedKey.language.name,
-        ) ??
-        'en';
+  Future<void> _initAppPrefs() async {
+    kAppLanguageCode = sl<AppPreferences>().getAppLanguageCode();
+
+    ApiConstance.token = sl<AppPreferences>().getToken();
+    log(ApiConstance.token, name: 'Token');
   }
 
   void _initAnimationControllers() {

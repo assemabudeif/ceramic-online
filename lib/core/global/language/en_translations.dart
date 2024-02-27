@@ -9,6 +9,40 @@ Map<String, String> get enTranslations => {
       AppStrings.areYouSureToExitApp: 'Are you sure to exit the application?',
       AppStrings.cancel: 'Cancel',
       AppStrings.notifications: 'Notifications',
+      AppStrings.error: 'Error',
+      AppStrings.success: 'Success',
+      AppStrings.registerSuccess: 'Sign up successfully',
+      AppStrings.loginSuccess: 'Login successfully',
+      AppStrings.pleaseAgreeToTheTermsAndPolicy:
+          'Please agree to the terms and policy',
+      AppStrings.empty: 'Empty!',
+      AppStrings.retry: 'Retry',
+      AppStrings.noMoreItems: 'No more items',
+
+      // General Errors
+      AppStrings.connectionTimeoutWithApiServer:
+          'Connection timeout with the Api Server',
+      AppStrings.receiveTimeoutWithApiServer:
+          'Receive timeout with the Api Server',
+      AppStrings.sendTimeoutWithApiServer: 'Send timeout with the Api Server',
+      AppStrings.yourRequestWithApiServerWasCanceled:
+          'Your request with the Api Server was canceled',
+      AppStrings.failedToAuthenticateWithApiServer:
+          'Failed to authenticate with the Api Server',
+      AppStrings.thereWasAConnectionErrorWithTheServer:
+          'There was a connection error with the server',
+      AppStrings.checkYourInternetConnectionPlease:
+          'Check your internet connection please!',
+      AppStrings.thereWasAnUnknownErrorWithTheServer:
+          'There was an unknown error with the server',
+      AppStrings.yourRequestNotFoundPleaseTryAgainLater:
+          'Your request not found, please try again later!',
+      AppStrings.internalServerErrorPleaseTryAgainLater:
+          'Internal server error, please try again later!',
+      AppStrings.oopsThereWasAnErrorPleaseTryAgainLater:
+          'Oops, there was an error, please try again later!',
+      AppStrings.yourSessionHasExpiredPleaseLoginAgain:
+          'Your session has expired, please login again!',
 
       // Auth
       AppStrings.login: 'Login',

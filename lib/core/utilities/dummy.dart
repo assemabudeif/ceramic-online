@@ -3,15 +3,6 @@ import 'assets_data.dart';
 //
 /// Category Dummy Model
 //
-class CategoryModel {
-  final String name;
-  final String image;
-
-  CategoryModel({
-    required this.name,
-    required this.image,
-  });
-}
 
 //
 /// Product Dummy Model
@@ -47,56 +38,4 @@ final List<ProductModel> kDummyProducts = [
           'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
       quantity: 1,
     ),
-];
-
-/// Dummy Categories
-final List<CategoryModel> kDummyCategories = [
-  CategoryModel(
-    name: 'Ceramic',
-    image: AssetsData.ceramicCategoryIconSVG,
-  ),
-  CategoryModel(
-    name: 'Tap',
-    image: AssetsData.tapCategoryIconSVG,
-  ),
-  CategoryModel(
-    name: 'Ceramic',
-    image: AssetsData.ceramicCategoryIconSVG,
-  ),
-  CategoryModel(
-    name: 'Tap',
-    image: AssetsData.tapCategoryIconSVG,
-  ),
-  CategoryModel(
-    name: 'Ceramic',
-    image: AssetsData.ceramicCategoryIconSVG,
-  ),
-  CategoryModel(
-    name: 'Tap',
-    image: AssetsData.tapCategoryIconSVG,
-  ),
-  CategoryModel(
-    name: 'Ceramic',
-    image: AssetsData.ceramicCategoryIconSVG,
-  ),
-  CategoryModel(
-    name: 'Tap',
-    image: AssetsData.tapCategoryIconSVG,
-  ),
-  CategoryModel(
-    name: 'Ceramic',
-    image: AssetsData.ceramicCategoryIconSVG,
-  ),
-  CategoryModel(
-    name: 'Tap',
-    image: AssetsData.tapCategoryIconSVG,
-  ),
-  CategoryModel(
-    name: 'Ceramic',
-    image: AssetsData.ceramicCategoryIconSVG,
-  ),
-  CategoryModel(
-    name: 'Tap',
-    image: AssetsData.tapCategoryIconSVG,
-  ),
 ];

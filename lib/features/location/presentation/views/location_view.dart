@@ -1,31 +1,36 @@
-import '/core/global/widgets/custom_app_bar.dart';
+import 'package:ceramic_online/core/services/services_locator.dart';
+import 'package:ceramic_online/features/location/presentation/view_models/locations_cubit.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import 'widgets/location_view_body.dart';
+import '/core/global/widgets/custom_app_bar.dart';
+import 'widgets/location_view/location_view_body.dart';
 
 class LocationView extends StatelessWidget {
   const LocationView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBar(
-        title: AppStrings.locations.tr,
-        leading: IconButton(
-          icon: Icon(
-            Icons.close,
-            color: kDarkIconColor,
-            size: 15.w,
+    return BlocProvider<LocationsCubit>(
+      create: (context) => sl<LocationsCubit>(),
+      child: Scaffold(
+        appBar: CustomAppBar(
+          title: AppStrings.locations.tr,
+          leading: IconButton(
+            icon: Icon(
+              Icons.close,
+              color: kDarkIconColor,
+              size: 15.w,
+            ),
+            onPressed: () => Get.back(),
           ),
-          onPressed: () => Get.back(),
         ),
+        body: const LocationViewBody(),
       ),
-      body: const LocationViewBody(),
     );
   }
 }

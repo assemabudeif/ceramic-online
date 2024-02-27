@@ -1,10 +1,16 @@
-import '/features/home/presentation/views/home_layout_imports.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '/features/home/presentation/views/home_layout_imports.dart';
+
 class ProfileCustomTextFormFieldWidget extends StatelessWidget {
-  const ProfileCustomTextFormFieldWidget({super.key, required this.title});
+  const ProfileCustomTextFormFieldWidget({
+    super.key,
+    required this.title,
+    required this.controller,
+  });
   final String title;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +24,12 @@ class ProfileCustomTextFormFieldWidget extends StatelessWidget {
           ),
         ),
         SizedBox(height: 5.h),
-        TextFormField(),
+        SizedBox(
+          height: 0.07.sh,
+          child: TextFormField(
+            controller: controller,
+          ),
+        ),
         SizedBox(height: 20.h),
       ],
     );

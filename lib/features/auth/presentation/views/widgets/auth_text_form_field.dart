@@ -1,6 +1,7 @@
-import '/core/global/theme/app_colors_light.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import '/core/global/theme/app_colors_light.dart';
 
 class AuthTextFormField extends StatelessWidget {
   const AuthTextFormField({

@@ -1,8 +1,8 @@
-import '/features/widgets/custom_cart_icon_widget.dart';
-
-import '/core/global/language/language_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '/core/global/language/language_manger.dart';
+import '/features/widgets/custom_cart_icon_widget.dart';
 import 'home_layout_imports.dart';
 
 class HomeLayoutView extends StatefulWidget {

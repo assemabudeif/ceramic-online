@@ -1,8 +1,7 @@
-import 'package:ceramic_online/core/global/language/app_strings.dart';
-import 'package:ceramic_online/core/global/widgets/custom_app_bar.dart';
-import 'package:ceramic_online/features/home/presentation/views/home_layout_imports.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '/features/home/presentation/views/home_layout_imports.dart';
 
 class NotificationView extends StatefulWidget {
   const NotificationView({super.key});

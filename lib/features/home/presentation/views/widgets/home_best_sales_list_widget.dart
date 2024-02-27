@@ -1,8 +1,9 @@
-import '/core/global/theme/app_colors_light.dart';
-import '/core/utilities/font_manger.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import '/core/global/theme/app_colors_light.dart';
+import '/core/utilities/font_manger.dart';
 
 class HomeBestSalesListWidget extends StatelessWidget {
   const HomeBestSalesListWidget({super.key});

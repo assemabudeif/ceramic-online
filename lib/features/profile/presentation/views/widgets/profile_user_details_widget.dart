@@ -1,10 +1,13 @@
-import '/features/home/presentation/views/home_layout_imports.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
+import '/features/home/presentation/views/home_layout_imports.dart';
+import '/features/profile/presentation/view_models/profile_cubit.dart';
+
 class ProfileUserDetailsWidget extends StatelessWidget {
-  const ProfileUserDetailsWidget({super.key});
+  const ProfileUserDetailsWidget({super.key, required this.cubit});
+  final ProfileCubit cubit;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +49,7 @@ class ProfileUserDetailsWidget extends StatelessWidget {
           ],
         ),
         Text(
-          'Aymen Magdy',
+          cubit.profileModel?.userData.fullName ?? '',
           style: context.textTheme.titleMedium,
         ),
         Row(

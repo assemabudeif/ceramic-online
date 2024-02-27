@@ -13,7 +13,7 @@ const kDefaultLanguage = 'en';
 const kDefaultCountry = 'US';
 const kDefaultLocale = Locale(kDefaultLanguage, kDefaultCountry);
 const kDefaultPadding = 18.0;
-String kAppLanguage = '';
+String kAppLanguageCode = '';
 
 // Animation Constants
 const kDefaultRouteTransition = Transition.fadeIn;

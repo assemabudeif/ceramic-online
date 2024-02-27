@@ -1,11 +1,11 @@
-import '/core/global/language/app_strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '/core/utilities/assets_data.dart';
+import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
+import '/core/utilities/assets_data.dart';
 
 class AuthLoginWithGoogleWidget extends StatelessWidget {
   const AuthLoginWithGoogleWidget({

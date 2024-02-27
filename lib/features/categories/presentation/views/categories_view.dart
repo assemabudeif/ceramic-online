@@ -1,90 +1,62 @@
-import '/features/widgets/custom_search_widget.dart';
-
-import '/core/global/language/app_strings.dart';
-import '/core/global/theme/app_colors_light.dart';
-import '/core/utilities/app_constance.dart';
-import '/core/utilities/dummy.dart';
-import '/core/utilities/routes_manger.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-class CategoriesView extends StatelessWidget {
+import '/core/global/language/app_strings.dart';
+import '/core/services/services_locator.dart';
+import '/core/utilities/app_constance.dart';
+import '/features/categories/presentation/view_models/categories_cubit.dart';
+import '/features/widgets/custom_search_widget.dart';
+import 'widgets/categories_list_widget.dart';
+
+class CategoriesView extends StatefulWidget {
   const CategoriesView({super.key});
 
   @override
+  State<CategoriesView> createState() => _CategoriesViewState();
+}
+
+class _CategoriesViewState extends State<CategoriesView> {
+  final _cubit = sl<CategoriesCubit>();
+
+  @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      physics: const BouncingScrollPhysics(
-        parent: AlwaysScrollableScrollPhysics(),
-      ),
-      padding: EdgeInsets.symmetric(
-        horizontal: kDefaultPadding.w,
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            AppStrings.chooseCategories.tr,
-            style: context.textTheme.titleMedium!.copyWith(
-              color: context.theme.primaryColor,
-            ),
-          ),
-          const SizedBox(height: kDefaultPadding),
-          CustomSearchWidget(
-            hintText: AppStrings.search.tr,
-            hasPadding: false,
-          ),
-          const SizedBox(height: kDefaultPadding),
-          ListView.separated(
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              return InkWell(
-                onTap: () {
-                  Get.toNamed(Routes.categoryDataPath);
-                },
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            color: kTextFieldFillColor,
-                            borderRadius: BorderRadius.circular(10.r),
-                          ),
-                          width: 60.w,
-                          height: 60.h,
-                          child: Center(
-                            child: SvgPicture.asset(
-                              kDummyCategories[index].image,
-                              width: 30.w,
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 20.w),
-                        Text(
-                          kDummyCategories[index].name,
-                        ),
-                      ],
-                    ),
-                    Icon(
-                      Icons.arrow_forward_ios,
-                      size: 18.sp,
-                    ),
-                  ],
+    return BlocProvider(
+      create: (context) => _cubit,
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: kDefaultPadding.w,
+        ),
+        child: RefreshIndicator(
+          onRefresh: () async {
+            _cubit.pagingController.refresh();
+            _cubit.pageKey = 1;
+            _cubit.isLastPage = false;
+            return _cubit.getAllCategories();
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                AppStrings.chooseCategories.tr,
+                style: context.textTheme.titleMedium!.copyWith(
+                  color: context.theme.primaryColor,
                 ),
-              );
-            },
-            separatorBuilder: (context, index) {
-              return const SizedBox(height: kDefaultPadding);
-            },
-            itemCount: kDummyCategories.length,
+              ),
+              const SizedBox(height: kDefaultPadding),
+              CustomSearchWidget(
+                hintText: AppStrings.search.tr,
+                hasPadding: false,
+              ),
+              const SizedBox(height: kDefaultPadding),
+              CategoriesListWidget(
+                cubit: _cubit,
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }

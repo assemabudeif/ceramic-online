@@ -1,8 +1,9 @@
-import '/core/utilities/assets_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+
+import '/core/utilities/assets_data.dart';
 
 class OrderDetailsProductsDetailsWidget extends StatelessWidget {
   const OrderDetailsProductsDetailsWidget({super.key});

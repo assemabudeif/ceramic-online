@@ -1,8 +1,9 @@
-import '/core/global/theme/app_colors_light.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mobkit_dashed_border/mobkit_dashed_border.dart';
 import 'package:qr_flutter/qr_flutter.dart';
+
+import '/core/global/theme/app_colors_light.dart';
 
 class CustomQrCodeWidget extends StatelessWidget {
   const CustomQrCodeWidget({

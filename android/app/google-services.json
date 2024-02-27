@@ -12,7 +12,20 @@
           "package_name": "com.linegroup.ceramic.online"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "614680012848-255v3fa2kv7tpm38i038hdnrnsulmcj6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.linegroup.ceramic.online",
+            "certificate_hash": "ecd669586919fee633f8b42742005d64f785df8e"
+          }
+        },
+        {
+          "client_id": "614680012848-fh2nn921osgivaqoobviit4uvjvr85lu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyC5BothK0wQZMeP6O1goEAKbqilhbijtQY"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "614680012848-fh2nn921osgivaqoobviit4uvjvr85lu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "614680012848-ebipd5dn4sv0rvirp0140o8adkn5etv7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.linegroup.ceramic.online"
+              }
+            }
+          ]
         }
       }
     }

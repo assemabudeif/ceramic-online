@@ -1,10 +1,11 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/assets_data.dart';
 import '/core/utilities/dummy.dart';
 import '/core/utilities/font_manger.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
 class CartProductsListWidget extends StatelessWidget {
   const CartProductsListWidget({super.key});

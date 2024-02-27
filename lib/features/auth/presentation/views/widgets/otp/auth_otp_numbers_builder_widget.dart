@@ -1,9 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/font_manger.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AuthOTPNumbersBuilderWidget extends StatefulWidget {
   const AuthOTPNumbersBuilderWidget({super.key});

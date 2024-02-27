@@ -1,11 +1,11 @@
-import '/core/global/language/app_strings.dart';
-import '/core/global/theme/app_colors_light.dart';
-import '/core/utilities/app_constance.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
+import '/core/global/language/app_strings.dart';
+import '/core/global/theme/app_colors_light.dart';
+import '/core/utilities/app_constance.dart';
 import 'support_message_widget.dart';
 import 'user_message_widget.dart';
 

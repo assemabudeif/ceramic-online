@@ -1,6 +1,6 @@
-import '/core/global/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
+import '/core/global/widgets/custom_app_bar.dart';
 import 'widgets/phone/auth_sign_phone_number_view_body.dart';
 
 class AuthSignPhoneNumberView extends StatelessWidget {

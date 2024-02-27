@@ -1,3 +1,7 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+
 import '/core/global/language/app_strings.dart';
 import '/core/global/theme/app_colors_light.dart';
 import '/core/utilities/font_manger.dart';
@@ -6,9 +10,6 @@ import '/features/cart/presentation/views/widgets/cart_title_widget.dart';
 import '/features/widgets/custom_payment_summary_widget.dart';
 import '/features/widgets/custom_qr_code_title_widget.dart';
 import '/features/widgets/custom_qr_code_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 
 class CheckoutViewBody extends StatelessWidget {
   const CheckoutViewBody({super.key});

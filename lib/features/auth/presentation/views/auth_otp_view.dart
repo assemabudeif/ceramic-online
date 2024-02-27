@@ -1,6 +1,6 @@
-import '/core/global/widgets/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
+import '/core/global/widgets/custom_app_bar.dart';
 import 'widgets/otp/auth_otp_view_body.dart';
 
 class AuthOtpView extends StatelessWidget {

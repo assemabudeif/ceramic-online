@@ -1,5 +1,6 @@
-import '/core/global/theme/theme_manger.dart';
 import 'package:flutter/material.dart';
+
+import '/core/global/theme/theme_manger.dart';
 
 Color kPrimaryColor = const Color(0xFF37338D);
 const Color kHintColor = Color(0xFF707070);

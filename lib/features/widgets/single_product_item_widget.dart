@@ -1,21 +1,21 @@
-
-import '/core/global/theme/app_colors_light.dart';
-import '/core/utilities/app_constance.dart';
-import '/core/utilities/dummy.dart';
-import '/core/utilities/routes_manger.dart';
+import 'package:ceramic_online/core/global/widgets/custom_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+
+import '/core/data/models/product_data_model.dart';
+import '/core/global/theme/app_colors_light.dart';
+import '/core/utilities/app_constance.dart';
+import '/core/utilities/routes_manger.dart';
+import '/features/favorites/presentation/view_models/favorite_cubit.dart';
 
 class SingleProductItemWidget extends StatelessWidget {
   const SingleProductItemWidget({
     super.key,
-    required this.index,
-    this.isCategory = false,
+    required this.product,
   });
-  final int index;
-  final bool isCategory;
+
+  final ProductDataModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -37,27 +37,19 @@ class SingleProductItemWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10.r),
-                ),
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                child: SvgPicture.asset(
-                  kDummyProducts[index].image,
-                  width: 1.sw,
-                  fit: BoxFit.cover,
-                ),
+              child: CustomNetworkImage(
+                imageUrl: product.image,
               ),
             ),
             SizedBox(height: 2.h),
             Text(
-              kDummyProducts[index].name,
+              product.name,
               style: context.textTheme.titleMedium?.copyWith(
                 color: kTextDarkColor,
               ),
             ),
             Text(
-              kDummyProducts[index].description,
+              product.description,
               style: context.textTheme.bodyMedium?.copyWith(
                 color: kTextColor,
               ),
@@ -74,7 +66,7 @@ class SingleProductItemWidget extends StatelessWidget {
                 ),
                 SizedBox(width: kDefaultPadding.w / 3),
                 Text(
-                  kDummyProducts[index].price,
+                  product.price.toString(),
                   style: context.textTheme.headlineMedium?.copyWith(
                     color: kTextDarkColor,
                   ),

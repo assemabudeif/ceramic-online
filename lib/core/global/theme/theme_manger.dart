@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../../services/app_prefs.dart';
 import '/core/services/services_locator.dart';
-import '/core/services/shared_key.dart';
 
 bool get appThemeModeIsDark =>
     sl<SharedPreferences>().getBool(SharedKey.isDarkMode.name) ?? false;

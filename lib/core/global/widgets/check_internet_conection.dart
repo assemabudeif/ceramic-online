@@ -1,6 +1,8 @@
 import 'dart:io';
-import '/core/utilities/assets_data.dart';
+
 import 'package:flutter/material.dart';
+
+import '/core/utilities/assets_data.dart';
 
 class CheckNetworkConnectionWidget extends StatefulWidget {
   const CheckNetworkConnectionWidget({

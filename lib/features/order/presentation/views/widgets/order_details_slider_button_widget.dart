@@ -1,9 +1,10 @@
 import 'package:action_slider/action_slider.dart';
-import '/core/global/theme/app_colors_light.dart';
-import '/core/utilities/routes_manger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import '/core/global/theme/app_colors_light.dart';
+import '/core/utilities/routes_manger.dart';
 
 class OrderDetailsSliderButtonWidget extends StatelessWidget {
   const OrderDetailsSliderButtonWidget({super.key});

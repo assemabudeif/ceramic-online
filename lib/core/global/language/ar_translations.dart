@@ -9,6 +9,36 @@ Map<String, String> get arTranslations => {
       AppStrings.areYouSureToExitApp: 'هل أنت متأكد من الخروج من التطبيق؟',
       AppStrings.cancel: 'إلغاء',
       AppStrings.notifications: 'الإشعارات',
+      AppStrings.error: 'خطأ',
+      AppStrings.success: 'نجاح',
+      AppStrings.registerSuccess: 'تم التسجيل بنجاح',
+      AppStrings.loginSuccess: 'تم تسجيل الدخول بنجاح',
+      AppStrings.pleaseAgreeToTheTermsAndPolicy:
+          'يرجى الموافقة على الشروط والسياسة',
+      AppStrings.empty: 'فارغ',
+      AppStrings.retry: 'إعادة المحاولة',
+      AppStrings.noMoreItems: 'لا يوجد المزيد من العناصر',
+
+      // General Errors
+      AppStrings.connectionTimeoutWithApiServer: 'انتهت مهلة الاتصال مع الخادم',
+      AppStrings.receiveTimeoutWithApiServer: 'انتهت مهلة الاستقبال مع الخادم',
+      AppStrings.sendTimeoutWithApiServer: 'انتهت مهلة الإرسال مع الخادم',
+      AppStrings.yourRequestWithApiServerWasCanceled: 'تم إلغاء طلبك مع الخادم',
+      AppStrings.failedToAuthenticateWithApiServer: 'فشل في المصادقة مع الخادم',
+      AppStrings.thereWasAConnectionErrorWithTheServer:
+          'كان هناك خطأ في الاتصال مع الخادم',
+      AppStrings.checkYourInternetConnectionPlease:
+          'تحقق من اتصالك بالإنترنت من فضلك!',
+      AppStrings.thereWasAnUnknownErrorWithTheServer:
+          'كان هناك خطأ غير معروف مع الخادم',
+      AppStrings.yourRequestNotFoundPleaseTryAgainLater:
+          'لم يتم العثور على طلبك، يرجى المحاولة مرة أخرى لاحقا!',
+      AppStrings.internalServerErrorPleaseTryAgainLater:
+          'خطأ داخلي في الخادم، يرجى المحاولة مرة أخرى لاحقا!',
+      AppStrings.oopsThereWasAnErrorPleaseTryAgainLater:
+          'عذرا، حدث خطأ، يرجى المحاولة مرة أخرى لاحقا!',
+      AppStrings.yourSessionHasExpiredPleaseLoginAgain:
+          'انتهت جلستك، يرجى تسجيل الدخول مرة أخرى!',
 
       // Auth
       AppStrings.login: 'تسجيل الدخول',

@@ -1,8 +1,9 @@
-import '/core/global/theme/app_colors_light.dart';
 import 'package:easy_loading_button/easy_loading_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import '/core/global/theme/app_colors_light.dart';
 
 class CustomAppButton extends StatelessWidget {
   const CustomAppButton({

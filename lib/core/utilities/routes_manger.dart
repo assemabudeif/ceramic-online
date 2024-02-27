@@ -1,32 +1,25 @@
 import 'dart:developer';
 
-import '/features/notifications/presentation/views/notification_view.dart';
+import 'package:get/get.dart';
 
-import '/features/cart/presentation/views/checkout_view.dart';
-
+import '../../features/products/presentation/product_details/views/product_details_view.dart';
+import '/core/global/language/app_strings.dart';
+import '/features/auth/presentation/views/auth_otp_view.dart';
+import '/features/auth/presentation/views/auth_sign_phone_number_view.dart';
+import '/features/auth/presentation/views/login_view.dart';
+import '/features/auth/presentation/views/reset_password_view.dart';
+import '/features/auth/presentation/views/signup_view.dart';
 import '/features/cart/presentation/views/cart_view.dart';
-import '/features/order/presentation/views/order_details_view.dart';
-
-import '/features/chat_with_support/presentation/view/chat_with_support_view.dart';
-
+import '/features/cart/presentation/views/checkout_view.dart';
 import '/features/categories/presentation/views/categories_view.dart';
 import '/features/categories/presentation/views/category_data_view.dart';
-import '/features/product_details/presentation/views/product_details_view.dart';
-
-import '/features/location/presentation/views/location_details_view.dart';
-
-import '/features/auth/presentation/views/auth_sign_phone_number_view.dart';
-import '/features/auth/presentation/views/reset_password_view.dart';
+import '/features/chat_with_support/presentation/view/chat_with_support_view.dart';
 import '/features/home/presentation/views/home_layout_view.dart';
+import '/features/location/presentation/views/location_details_view.dart';
 import '/features/location/presentation/views/location_view.dart';
-import '/features/auth/presentation/views/auth_otp_view.dart';
-
-import '/core/global/language/app_strings.dart';
-
-import '/features/auth/presentation/views/signup_view.dart';
-import '/features/auth/presentation/views/login_view.dart';
+import '/features/notifications/presentation/views/notification_view.dart';
+import '/features/order/presentation/views/order_details_view.dart';
 import '/features/splash/presentation/views/splash_view.dart';
-import 'package:get/get.dart';
 
 /// Routes names
 class Routes {
@@ -116,7 +109,9 @@ List<GetPage<dynamic>> get appRoutes => [
       ),
       GetPage(
         name: Routes.locationDetailsPath,
-        page: () => const LocationDetailsView(),
+        page: () => LocationDetailsView(
+          governmentId: Get.arguments as String,
+        ),
       ),
 
       // Categories Screens
@@ -132,7 +127,9 @@ List<GetPage<dynamic>> get appRoutes => [
       // Product Details Screens
       GetPage(
         name: Routes.productDetailsPath,
-        page: () => const ProductDetailsView(),
+        page: () => ProductDetailsView(
+          productId: Get.arguments as int,
+        ),
       ),
 
       // Chat with Support
